@@ -18,10 +18,10 @@ These are **observations from the committed code and game UI**, not a newly inve
 
 The repository includes older SWF and HTML files, including numbered variants ending in 42. A historical HTML launcher uses Flash-era APIs; a local file listing previously showed a 2009 timestamp, but **file timestamps alone cannot establish authorship dates or specific design decisions**. The source README describes the present JS/SVG project as recovered from a v1.42 Electron executable rather than from an original Flash .fla.
 
-## To establish from primary creator testimony
+## To establish from primary Babuni.dev testimony
 
 The meaning of “42”; circumstances and original date of creation; inspirations; how mechanics evolved across Flash versions; why the project was revived; intended fidelity versus modern extensions. None are assumed here.
 
 ## Authorship
 
-The creator is credited as Babuni.dev in the present source, game metadata, and v1.42 readme. Code-level authorship attribution for individual reconstruction steps cannot be reliably inferred from the imported snapshot.
+Babuni.dev is credited as Babuni.dev in the present source, game metadata, and v1.42 readme. Code-level authorship attribution for individual reconstruction steps cannot be reliably inferred from the imported snapshot.
