@@ -2,7 +2,7 @@
 
 ## Ownership and attribution
 
-The creator owns creative direction and decides what enters the game's canon/design. Clearly distinguish creator instructions, AI suggestions, agreed decisions, implemented code, and test results. Never treat an AI suggestion as accepted by default.
+Babuni.dev owns creative direction and decides what enters the game's canon/design. Clearly distinguish Babuni.dev instructions, AI suggestions, agreed decisions, implemented code, and test results. Never treat an AI suggestion as accepted by default.
 
 ## Before coding
 
@@ -14,7 +14,7 @@ The creator owns creative direction and decides what enters the game's canon/des
 ## With every substantial change
 
 - Update README.md when project setup or status changes.
-- Update CONCEPT.md / docs/GAME_DESIGN.md when the creator establishes game direction.
+- Update CONCEPT.md / docs/GAME_DESIGN.md when Babuni.dev establishes game direction.
 - Update docs/ARCHITECTURE.md / docs/DESIGN.md / docs/CONTENT.md when relevant.
 - Update ROADMAP.md and CHANGELOG.md to reflect actual status.
 - Append a narrative entry to docs/DEVLOG.md and material decisions to docs/DECISIONS.md.
@@ -26,4 +26,8 @@ Use accessible inputs and readable feedback; respect responsive behavior and per
 
 ## Collaboration history
 
-Maintain the creator's reasoning, meaningful alternatives, disagreements, rejected ideas, and corrections in publication-safe summaries. Link related paths, commits, or issues when available.
+Maintain Babuni.dev's reasoning, meaningful alternatives, disagreements, rejected ideas, and corrections in publication-safe summaries. Link related paths, commits, or issues when available.
+
+## Author attribution
+
+Credit **Babuni.dev** as the original project author. Do not use “creator” as a title for Babuni.dev; identify separately any AI work, later reconstructions and third-party components.
