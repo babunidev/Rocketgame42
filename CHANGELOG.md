@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-26 — Author attribution
+
+- Identified **Babuni.dev** as author in the main README and documentation, and added the explicit author-naming rule to `AGENTS.md`.
+- Kept historical source provenance and original development dates unchanged.
+
 This file records changes supported by current repository evidence. The import is a snapshot, **not** a chronological commit-by-commit account of past development.
 
 ## 2026-10-26 — Documentation and source preservation
