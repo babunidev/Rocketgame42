@@ -1,14 +1,14 @@
 # Decision Register
 
-Separate explicit creator decisions from inferred technical decisions in existing code.
+Separate explicit Babuni.dev decisions from inferred technical decisions in existing code.
 
 ## D-001 — Development documentation
 
-- **2026-10-26; confirmed creator request:** Establish a structured repository for game development. The assistant authored the scaffold. Implemented and committed.
+- **2026-10-26; confirmed Babuni.dev request:** Establish a structured repository for game development. The assistant authored the scaffold. Implemented and committed.
 
 ## D-002 — Preserve existing project material
 
-- **2026-10-26; confirmed creator action:** Import local source, older Flash versions, sounds and the v1.42 readme to GitHub as commit `4d50ce6`. Ignore generated app data, dependencies, packaged EXE/RAR. Implemented.
+- **2026-10-26; confirmed Babuni.dev action:** Import local source, older Flash versions, sounds and the v1.42 readme to GitHub as commit `4d50ce6`. Ignore generated app data, dependencies, packaged EXE/RAR. Implemented.
 - This does not establish the origin dates of the imported artifacts.
 
 ## D-003 — Reconstruct Flash content as browser SVG/JS
@@ -27,4 +27,4 @@ Separate explicit creator decisions from inferred technical decisions in existin
 
 ## Open decisions / missing testimony
 
-Meaning of “42”; original Flash creation chronology; which changes were creator-requested versus AI-assisted in the remake; whether historical SWF differences are design milestones; distribution rights; test/build acceptance criteria; future portfolio demo presentation.
+Meaning of “42”; original Flash creation chronology; which changes were Babuni.dev-requested versus AI-assisted in the remake; whether historical SWF differences are design milestones; distribution rights; test/build acceptance criteria; future portfolio demo presentation.
