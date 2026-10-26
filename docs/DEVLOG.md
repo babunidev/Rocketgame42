@@ -6,7 +6,7 @@ This journal is a publication-safe narrative, not an invented diary. **Contempor
 
 The preserved `RaketenspielOLD/` directory contains Flash SWFs and HTML launchers, including variants with names ending in 3, 4, 41, and 42. The separate `raketenspiel.html` uses legacy Flash embedding and a 550 × 400 game area. These files show multiple historical *artifacts* but do not by themselves explain which features changed between versions or when they were created. A local file listing showed an old February 2009 timestamp on `raketenspiel.html`; this is a file metadata clue, not reliable proof of first publication or development chronology.
 
-What can be said responsibly for a future portfolio: the project has a preserved Flash-era lineage rather than beginning with the recent GitHub import. The original design motives, stage-by-stage evolution, and meaning of the title still need the creator's first-hand account or dated records.
+What can be said responsibly for a future portfolio: the project has a preserved Flash-era lineage rather than beginning with the recent GitHub import. The original design motives, stage-by-stage evolution, and meaning of the title still need Babuni.dev's first-hand account or dated records.
 
 ## Retrospective — Rebuilding the game without Flash (exact dates and sequence unverified)
 
@@ -22,21 +22,21 @@ The v1.42 user readme describes a self-contained 64-bit Windows portable build, 
 
 ## 2026-10-26 — A shared repository and documentation foundation
 
-**Creator direction:** The creator created `babunidev/Rocketgame42` and requested a lasting structure for developing and documenting the game. The creator then connected the existing local folder, initialized Git, configured the remote, excluded generated/dependency/packaged files, and pushed an import.
+**Babuni.dev direction:** Babuni.dev created `babunidev/Rocketgame42` and requested a lasting structure for developing and documenting the game. Babuni.dev then connected the existing local folder, initialized Git, configured the remote, excluded generated/dependency/packaged files, and pushed an import.
 
 **AI contribution:** The assistant initially made a generic documentation scaffold because the repository was empty. It then guided local Git initialization, selective staging, and safe synchronization with the new remote.
 
-**Implementation:** Twelve development documents were committed to GitHub; the creator's push of commit `4d50ce6` added 33 project files. Earlier versions of the scaffold incorrectly stated that no game implementation existed—an accurate statement only for the empty repository at that moment, but obsolete after import.
+**Implementation:** Twelve development documents were committed to GitHub; Babuni.dev's push of commit `4d50ce6` added 33 project files. Earlier versions of the scaffold incorrectly stated that no game implementation existed—an accurate statement only for the empty repository at that moment, but obsolete after import.
 
 **Verification:** User-shared terminal output confirmed the successful push and upstream tracking. The GitHub connector subsequently fetched source and documentation.
 
 ## 2026-10-26 — Reading the recovered code as project history
 
-**Creator direction:** Review the imported code, discover existing devlogs/changelogs, and make the material suitable for a future portfolio section.
+**Babuni.dev direction:** Review the imported code, discover existing devlogs/changelogs, and make the material suitable for a future portfolio section.
 
 **AI audit:** The assistant inspected source README, package metadata, gameplay, runtime, missiles, score handling, HTML shell, sound helper, Electron launcher, legacy HTML, and the available documentation. No dedicated historical devlog/changelog was evident in the initial 33-file import. The most useful historical evidence was instead the numbered SWF archives, v1.42 readme, code comments, and the recovered-source description.
 
-**Documentation correction:** The assistant replaced the generic “not yet implemented” documents with evidence-labeled descriptions of the existing project, its code architecture, observed gameplay, archival assets, and unresolved historical questions. The journal separates dated repository actions from retrospective reconstructions and the creator's still-unrecorded recollections.
+**Documentation correction:** The assistant replaced the generic “not yet implemented” documents with evidence-labeled descriptions of the existing project, its code architecture, observed gameplay, archival assets, and unresolved historical questions. The journal separates dated repository actions from retrospective reconstructions and Babuni.dev's still-unrecorded recollections.
 
 **Code review observations:** The Electron request allowlist may exclude the OGG files loaded by the audio helper; the package configuration references an icon absent from the imported file list; comments point to uncommitted `recovered-source/*.as` files. These are audit findings to verify, not confirmed runtime bugs.
 
@@ -45,7 +45,7 @@ The v1.42 user readme describes a self-contained 64-bit Windows portable build, 
 
 ## 2026-10-26 — A desktop button for spontaneous LAN play
 
-**Creator direction:** The creator wanted the local game application to have an explicit button labelled **Serve on Wi-Fi**. The intention was to host a game at gatherings without entering terminal commands each time, so friends on the same network could open it in their browser. This is a separate requirement from eventual public hosting and possible mobile controls.
+**Babuni.dev direction:** Babuni.dev wanted the local game application to have an explicit button labelled **Serve on Wi-Fi**. The intention was to host a game at gatherings without entering terminal commands each time, so friends on the same network could open it in their browser. This is a separate requirement from eventual public hosting and possible mobile controls.
 
 **AI interpretation and implementation:** Because web browsers cannot directly open arbitrary LAN server sockets, the assistant placed hosting in the Electron main process and exposed narrow start/stop/status actions to the local desktop game's interface through a preload bridge. The menu button opens a small panel showing local IPv4 URLs, a sharing control, and status. Remote browser players do not receive host controls. The server serves an explicit list of static game assets and uses TCP 4173.
 
