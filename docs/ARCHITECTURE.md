@@ -44,3 +44,10 @@ npm run dist       # Windows portable packaging
 ## Verification
 
 2026-10-26: Inspected named files via GitHub connector and checked repository import listing supplied by the creator. Browser execution, game simulation, builds, and cross-platform behavior **not verified**.
+
+
+## Local Wi-Fi serving (2026-10-26 source addition)
+
+`main.cjs` now includes a Node HTTP server that binds to all IPv4 network interfaces on port 4173 only when requested from the desktop menu. It allows only enumerated game assets and supports GET/HEAD; it stops when disabled or the app exits. `preload.cjs` exposes three IPC actions to the trusted Electron main frame. `game/wifi.js` and menu controls show hosting status and LAN URLs only when the preload API exists. Browser visitors have no host controls or Node access.
+
+**Limits:** This is not multiplayer; each player retains a separate local leaderboard. Firewall rules and network isolation may prevent access. Port conflicts are shown as errors. Binding to all interfaces should be used only on trusted LANs. Runtime tests and rebuild are pending. The previously noted OGG routing gap was addressed in source, not yet verified in a packaged build.
