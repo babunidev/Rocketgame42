@@ -7,7 +7,7 @@ Status terms: verified in repository / source-identified but runtime-unverified 
 - [x] Establish GitHub documentation structure (2026-10-26)
 - [x] Import modern source and preserved Flash material (commit 4d50ce6, 2026-10-26)
 - [x] Audit available source documentation and reconstruct an evidence-labeled initial history
-- [ ] Gather creator's account of the original game, versions and remake decisions
+- [ ] Gather Babuni.dev's account of the original game, versions and remake decisions
 
 ## Technical verification
 
@@ -22,7 +22,7 @@ Status terms: verified in repository / source-identified but runtime-unverified 
 
 - [ ] Capture approved screenshots/short gameplay footage of original and remake
 - [ ] Create a dated visual timeline, explicitly distinguishing evidence from recollection
-- [ ] Write a creator-led narrative of design motives, reconstruction challenges, and changes of direction
+- [ ] Write a Babuni.dev-led narrative of design motives, reconstruction challenges, and changes of direction
 - [ ] Prepare a playable web demo and/or release artifact after testing
 - [ ] Confirm asset credits, licensing and release permissions
 
