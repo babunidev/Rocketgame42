@@ -74,3 +74,18 @@
   right:24px; bottom:20px; width:178px; height:36px; text-align:left;
 }
 #score-screen:not(.welcome-mode) #start-game span { float:right; }
+
+/* Desktop-only LAN hosting controls. */
+#serve-wifi { position:absolute; bottom:24px; left:24px; width:136px; height:34px; z-index:3; border:1px solid #48697f; color:#cde6f4; background:#142b3d; font-size:9px; letter-spacing:.6px; }
+#serve-wifi:hover { background:#23465b; }
+#serve-wifi.active { color:#eaffab; border-color:#729441; }
+#score-screen:not(.welcome-mode) #serve-wifi { display:none; }
+#wifi-panel { position:absolute; inset:45px 65px; z-index:10; padding:25px; border:1px solid #729441; background:#06101af8; box-shadow:0 0 0 100px #000b; }
+#wifi-panel h2 { margin:0 0 12px; font-size:19px; letter-spacing:1px; color:#eaffab; }
+#wifi-panel p { font-size:11px; line-height:1.5; color:#a5bbca; }
+#wifi-addresses { margin:12px 0; min-height:35px; }
+#wifi-addresses a { display:block; margin:5px 0; color:#92d7ff; font-size:13px; word-break:break-all; }
+#wifi-status { min-height:24px; color:#d9e7f0 !important; }
+.wifi-actions { position:absolute; left:25px; right:25px; bottom:20px; display:flex; gap:10px; }
+.wifi-actions button { flex:1; min-height:34px; background:#183246; color:#eaf4fc; border:1px solid #48697f; }
+.wifi-actions button:first-child { color:#eaffab; border-color:#729441; }
