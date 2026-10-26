@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.asar
+.DS_Store
+Thumbs.db
+Raketenspiel 42 Data/
+.env
+.env.*
+.tools/

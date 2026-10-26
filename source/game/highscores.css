@@ -1,0 +1,76 @@
+/* Shell size is set in index.html inline CSS (viewport fit). Keep overflow here. */
+#game-shell { overflow:hidden; }
+.showing-scores #game [data-instance="gameover_mc"],.showing-scores #game [data-instance="neu_mc"] { display:none !important; }
+[hidden] { display:none !important; }
+#score-screen { position:absolute; inset:0 auto auto 0; width:550px; height:400px; box-sizing:border-box; transform:scale(var(--ui-scale,1)); transform-origin:top left; color:#d9e7f0; font:12px Arial,sans-serif; background:radial-gradient(ellipse at 94% 25%,#142539cc,transparent 56%),linear-gradient(120deg,#03060bee,#050911f5); border:1px solid #253d54; }
+#score-screen * { box-sizing:border-box; }
+.screen-header { position:absolute; top:22px; left:24px; right:24px; }
+.eyebrow { margin:0; color:#7696b3; font-size:10px; letter-spacing:3px; font-weight:bold; }
+.eyebrow span { color:#bcce3c; }
+.byline { margin:4px 0 7px; color:#8fb4d4; font-size:10px; letter-spacing:1.2px; }
+.byline a { color:inherit; text-decoration:none; }
+.byline a:hover { color:#eaffab; text-decoration:underline; }
+#screen-title { margin:0; color:#eaffab; font-size:27px; line-height:1.05; letter-spacing:2px; }
+#screen-subtitle { margin:7px 0 0; color:#8ca4ba; font-size:11px; }
+.leaderboard { position:absolute; left:24px; top:106px; width:294px; bottom:52px; }
+.board-heading { display:flex; justify-content:space-between; color:#7696b3; font-size:9px; letter-spacing:1.5px; padding:0 5px 9px; border-bottom:1px solid #29465a; }
+.board-heading span:last-child { color:#5d7389; }
+.leaderboard table { table-layout:fixed; border-collapse:collapse; width:100%; font-size:11px; }
+.leaderboard th { text-align:left; color:#68849b; font-size:8px; letter-spacing:1px; height:22px; font-weight:normal; }
+.leaderboard td { height:18px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; border-bottom:1px solid #172330; }
+.leaderboard th,.leaderboard td { padding:0 5px; }
+.leaderboard th:nth-child(1) { width:28px; }
+.leaderboard th:nth-child(3) { width:70px; }
+.leaderboard th:nth-child(4) { width:31px; }
+.leaderboard th:nth-child(n+3),.leaderboard td:nth-child(n+3) { text-align:right; font-variant-numeric:tabular-nums; }
+.leaderboard td:first-child { color:#68849b; font-variant-numeric:tabular-nums; }
+.leaderboard tr:first-child td { color:#eaffab; }
+.leaderboard tr.current-run { background:#263c23; outline:1px solid #698b40; outline-offset:-1px; }
+.leaderboard tr.current-run td { color:#eaffab; }
+#empty-scores { margin:62px 0 0; text-align:center; letter-spacing:1.5px; color:#7696b3; font-size:11px; }
+#empty-scores span { display:block; margin-top:10px; font-size:10px; letter-spacing:0; color:#596f83; }
+#standing { margin:9px 0 0; color:#d6ee9c; font-size:10px; min-height:12px; }
+.mission-panel { position:absolute; left:346px; top:78px; width:178px; bottom:62px; border-left:1px solid #213348; padding-left:18px; }
+#menu-ship { display:block; width:64px; height:90px; margin:-14px auto 2px; overflow:visible; }
+.mission-title { margin:0; font-size:9px; line-height:1.35; letter-spacing:1.1px; color:#c7d8e6; }
+.controls { margin:4px 0 0; font-size:10px; line-height:1.45; color:#7894aa; }
+.bonus-legend { list-style:none; margin:8px 0 0; padding:8px 0 0; border-top:1px solid #213348; display:flex; flex-direction:column; gap:6px; }
+.bonus-legend li { display:flex; align-items:center; gap:8px; }
+.legend-rock { width:28px; height:28px; flex-shrink:0; overflow:visible; }
+.legend-rock.blue { filter:drop-shadow(0 0 4px #3399ff) drop-shadow(0 0 8px #66ccff) brightness(1.15); }
+.legend-rock.green { filter:drop-shadow(0 0 4px #00ff66) drop-shadow(0 0 8px #33ff99) brightness(1.25); }
+.legend-rock.red { filter:drop-shadow(0 0 4px #ff2200) drop-shadow(0 0 8px #ff0000) saturate(1.4); }
+.legend-label { display:flex; flex-direction:column; gap:1px; font-size:8px; line-height:1.25; color:#6f879c; letter-spacing:0.2px; }
+.legend-label strong { font-size:10px; letter-spacing:0.4px; }
+.legend-blue strong { color:#8fd0ff; }
+.legend-green strong { color:#7dffb0; }
+.legend-red strong { color:#ff8a6a; }
+.result-points { margin:9px 0 0; }
+.result-points strong { display:block; font-size:29px; line-height:1.1; font-variant-numeric:tabular-nums; color:#eaffab; overflow:hidden; text-overflow:ellipsis; }
+.result-points span { display:block; margin-top:3px; font-size:9px; letter-spacing:1.3px; color:#748ca3; }
+.result-level { margin:10px 0 18px; font-size:10px; letter-spacing:1px; color:#748ca3; }
+.result-level strong { color:#d9e7f0; margin-left:6px; font-size:12px; }
+#score-form label { display:block; color:#a1b6c8; font-size:9px; letter-spacing:1px; margin-bottom:6px; }
+#player-name { width:100%; height:30px; border:1px solid #48697f; border-radius:0; background:#07121d; color:#efffc9; padding:5px 7px; font:12px Arial,sans-serif; }
+#score-screen button { border-radius:0; cursor:pointer; font-family:Arial,sans-serif; font-weight:bold; }
+#player-name:focus-visible,#score-screen button:focus-visible { outline:2px solid #d6f790; outline-offset:3px; }
+#save-score { width:100%; margin-top:7px; height:28px; padding:0 8px; border:1px solid #426b88; color:#cde6f4; background:#162d40; text-align:left; font-size:10px; letter-spacing:.5px; }
+#save-score span { float:right; }
+#save-score:disabled { cursor:default; border-color:#345135; background:#172c20; color:#b9d78e; }
+#player-name[readonly] { border-color:#345135; color:#a9c88b; }
+#save-message { margin:6px 0 0; color:#7894aa; font-size:9px; line-height:1.3; }
+.screen-footer { position:absolute; bottom:20px; left:24px; right:24px; }
+#storage-note { margin:0; max-width:280px; font-size:9px; line-height:1.4; color:#536b80; }
+#start-game { position:absolute; padding:0 14px; color:#eaffab; border:1px solid #729441; background:linear-gradient(#263d25,#192b20); font-size:11px; letter-spacing:1px; box-shadow:0 0 18px #71932d22; z-index:2; }
+#start-game span { font-size:10px; }
+#start-game:hover { background:#304729; border-color:#c3ea79; }
+/* Welcome: bottom-center. Game over: bottom-right (leave room for the form). */
+#score-screen.welcome-mode #start-game {
+  left:50%; bottom:20px; transform:translateX(-50%);
+  width:210px; height:44px; text-align:center; letter-spacing:1.5px;
+}
+#score-screen.welcome-mode #start-game span { margin-left:10px; }
+#score-screen:not(.welcome-mode) #start-game {
+  right:24px; bottom:20px; width:178px; height:36px; text-align:left;
+}
+#score-screen:not(.welcome-mode) #start-game span { float:right; }

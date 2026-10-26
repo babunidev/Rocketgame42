@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raketenspiel 42 by Babuni.dev</title>
+  <meta name="author" content="Babuni.dev">
+  <meta name="creator" content="Babuni.dev">
+  <meta name="application-name" content="Raketenspiel 42">
+  <meta name="description" content="Raketenspiel 42 by Babuni.dev — defend the mothership.">
+  <meta name="theme-color" content="#050911">
+  <meta property="og:title" content="Raketenspiel 42 by Babuni.dev">
+  <meta property="og:description" content="Defend the mothership. A remake by Babuni.dev.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Raketenspiel 42 by Babuni.dev">
+  <meta name="twitter:description" content="Defend the mothership. A remake by Babuni.dev.">
+  <style>
+    html, body { margin:0; height:100%; background:#000; }
+    body {
+      min-height:100vh;
+      min-height:100dvh;
+      display:grid;
+      place-items:center;
+    }
+    /* Explicit size so the SVG's 550×400 intrinsic size cannot pin the shell small. */
+    #game-shell {
+      position:relative;
+      box-sizing:border-box;
+      width:min(100vw, calc(100vh * 11 / 8));
+      height:min(100vh, calc(100vw * 8 / 11));
+      width:min(100vw, calc(100dvh * 11 / 8));
+      height:min(100dvh, calc(100vw * 8 / 11));
+      overflow:hidden;
+    }
+    #game { display:block; width:100%; height:100%; touch-action:none; user-select:none; outline:none; }
+  </style>
+  <link rel="stylesheet" href="highscores.css?v=startbot">
+</head>
+<body>
+  <main id="game-shell">
+    <svg id="game" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 550 400" role="application" aria-label="Raketenspiel. Move the mouse to steer. Hold left click to fire laser. Right click to fire seeker missiles." tabindex="0"></svg>
+    <section id="score-screen" aria-labelledby="screen-title">
+      <header class="screen-header">
+        <p class="eyebrow">RAKETENSPIEL <span>42</span></p>
+        <p class="byline">by Babuni.dev</p>
+        <h1 id="screen-title">HIGH SCORES</h1>
+        <p id="screen-subtitle">Your next run could be the best.</p>
+      </header>
+      <section class="leaderboard" aria-label="Local high scores">
+        <div class="board-heading"><span>HALL OF FAME</span><span>TOP 10</span></div>
+        <table>
+          <thead><tr><th scope="col">#</th><th scope="col">NAME</th><th scope="col">POINTS</th><th scope="col">LVL</th></tr></thead>
+          <tbody id="score-rows"></tbody>
+        </table>
+        <p id="empty-scores">NO SCORES YET<span>Be the first name on the board.</span></p>
+        <p id="standing" role="status" aria-live="polite"></p>
+      </section>
+      <aside class="mission-panel">
+        <div id="welcome-panel">
+          <svg id="menu-ship" viewBox="246 269 88 116" aria-hidden="true"></svg>
+          <p class="mission-title">DEFEND THE MOTHERSHIP</p>
+          <p class="controls">Mouse to steer.<br>Hold left click for laser.<br>Right click: fire seeker missiles.</p>
+          <ul class="bonus-legend" aria-label="Special asteroids">
+            <li>
+              <svg class="legend-rock" id="legend-rock-blue" viewBox="0 0 64 64" aria-hidden="true"></svg>
+              <span class="legend-label legend-blue"><strong>+ Shield</strong>Let it hit you</span>
+            </li>
+            <li>
+              <svg class="legend-rock" id="legend-rock-green" viewBox="0 0 64 64" aria-hidden="true"></svg>
+              <span class="legend-label legend-green"><strong>+ Laser</strong>Let it hit you</span>
+            </li>
+            <li>
+              <svg class="legend-rock" id="legend-rock-red" viewBox="0 0 64 64" aria-hidden="true"></svg>
+              <span class="legend-label legend-red"><strong>Damage</strong>Shoot it down</span>
+            </li>
+          </ul>
+        </div>
+        <div id="result-panel" hidden>
+          <p class="mission-title">YOUR RUN</p>
+          <div class="result-points"><strong id="run-points">0</strong><span>POINTS</span></div>
+          <p class="result-level">LEVEL <strong id="run-level">1</strong></p>
+          <form id="score-form" autocomplete="off">
+            <label for="player-name">ENTER YOUR NAME</label>
+            <input id="player-name" name="player-name" maxlength="16" required spellcheck="false" autocapitalize="off" placeholder="Your name" aria-describedby="save-message">
+            <button id="save-score" type="submit">SAVE SCORE <span>↵</span></button>
+            <p id="save-message" aria-live="polite">Press Enter to claim your place.</p>
+          </form>
+        </div>
+      </aside>
+      <footer class="screen-footer">
+        <p id="storage-note">Saved locally in this browser.</p>
+      </footer>
+      <button id="start-game" type="button">START GAME <span>▶</span></button>
+    </section>
+  </main>
+  <noscript><p style="color:white">Please enable JavaScript to play.</p></noscript>
+  <script src="sfx.js?v=3"></script>
+  <script src="assets.js?v=en1"></script>
+  <script src="gameplay.js?v=fps48"></script>
+  <script src="missiles.js?v=fps48"></script>
+  <script src="runtime.js?v=fps48"></script>
+  <script src="highscores.js?v=startmid"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+RAKETENSPIEL 42 by Babuni.dev — VERSION 1.42
+
+Maker: Babuni.dev (https://babuni.dev)
+
+Run: Raketenspiel 42 v1.42 Portable.exe
+
+Copy the EXE to a USB stick or any folder on your computer and double-click it.
+No installation, browser, Flash, or internet connection is needed.
+The first launch may take a few seconds while the runtime unpacks.
+
+This is the updated game, including the latest laser changes, special asteroids,
+high scores, menu instructions, and animation refinements from the browser source.
+
+HIGH SCORES
+The game creates a "Raketenspiel 42 Data" folder next to the EXE.
+To take your scores with you, close the game and copy BOTH the EXE and this folder.
+Copying just the EXE gives you a fresh high-score table at the new location.
+If the USB stick or folder is read-only, scores use Windows user-data storage.
+Existing Chrome/Edge/browser-preview scores are separate from the app's scores.
+
+CONTROLS
+Move the mouse to steer. Hold the left mouse button to fire.
+Blue special asteroid: collect for shield. Green: collect for laser energy.
+Red: shoot it down. At game over, enter your name and press Enter to save.
+Close the window to exit. Close the game before removing a USB stick.
+
+64-bit Windows build. User-facing version 1.42 (file/package version 1.42.0).
+The executable is unsigned; Windows may display an unknown-publisher warning.
+There is no setup program for this release.

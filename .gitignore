@@ -1,0 +1,26 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+
+# Local development tools
+.tools/
+
+# Build output
+dist/
+build/
+out/
+
+# Packaged game releases
+*.exe
+*.rar
+
+# Temporary files
+*.tmp
+*.log
+
+# Operating system
+.DS_Store
+Thumbs.db
+
+# Electron application user data
+/Raketenspiel 42 Data/

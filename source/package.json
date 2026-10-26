@@ -1,0 +1,54 @@
+{
+  "name": "raketenspiel-42",
+  "version": "1.42.0",
+  "description": "Raketenspiel 42 by Babuni.dev — portable offline game",
+  "author": {
+    "name": "Babuni.dev",
+    "url": "https://babuni.dev"
+  },
+  "homepage": "https://babuni.dev",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "dev:web": "python3 -m http.server 4173 --directory game",
+    "dist": "electron-builder --win portable",
+    "dist:dir": "electron-builder --win dir"
+  },
+  "devDependencies": {
+    "@electron/asar": "^3.4.1",
+    "electron": "44.7.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "dev.babuni.raketenspiel42",
+    "productName": "Raketenspiel 42",
+    "copyright": "Copyright © Babuni.dev",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.cjs",
+      "package.json",
+      "source-manifest.json",
+      "game/**/*",
+      "build/icon.png"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "build/icon.png",
+      "artifactName": "Raketenspiel 42 v${version} Portable.${ext}"
+    },
+    "portable": {
+      "requestExecutionLevel": "user"
+    },
+    "electronVersion": "44.7.0"
+  }
+}

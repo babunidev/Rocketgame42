@@ -1,0 +1,11 @@
+{
+  "version": "1.42",
+  "files": {
+    "index.html": "dec10f2668bc2768cbfbc0541b85b421672ae4875f3c1e42e9242240e537c73f",
+    "assets.js": "e86fd02f0038a79db0e1cc2ba544b237d3a170669d649a52be3651d9ed533084",
+    "gameplay.js": "239f168b877a713c02ed3d836ad8b9ac1edeb52f5c3132e3f8a7cdfebabc4e9a",
+    "runtime.js": "f0a8afe57e35ea97c5926490104cecb56236c75d8e8319ac10e2b2ed0e029b83",
+    "highscores.js": "9dafa1ad97359fef17c89ed68fd78c8ab9af26f0c7b7498bfca159acdecce74d",
+    "highscores.css": "b98f16517845a72a150ca70ac28d2b7c987bd4e7edab0946a2b231d0c65790d8"
+  }
+}
