@@ -61,3 +61,12 @@ for name, expected in manifest['files'].items():
     print(('OK' if got == expected else 'CHANGED'), name)
 PY
 ```
+
+
+## Serve on Wi-Fi (Electron desktop app)
+
+Run `npm start` from `source/` and choose **SERVE ON WI-FI** on the start menu. In the popup choose **START SHARING**. The app starts a temporary HTTP server on TCP port **4173**, bound to `0.0.0.0`, and displays its detected IPv4 LAN URLs. People on the same reachable network can open one of the addresses in their browser. Use **STOP SHARING** to end hosting; closing the desktop app also stops the server.
+
+The hosting button exists **only in the Electron desktop app**, not a regular browser or the hosted clients. Each guest plays independently; high scores are stored in each visitor's browser, not shared.
+
+LAN access may require allowing TCP 4173 through the host firewall. Avoid untrusted/public networks: `0.0.0.0` listens on all IPv4 interfaces. Port 4173 must be free. The existing Windows portable executable was built before this change and must be rebuilt to include it. This feature has not yet been tested in a live Electron/LAN session.
