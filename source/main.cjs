@@ -39,7 +39,7 @@ async function startLan() {
   const server = http.createServer((req,res) => {
     const raw = (req.url || '/').split('?')[0];
     let relative;
-    try { relative = decodeURIComponent(raw).replace(/^\\/+/, '') || 'index.html'; }
+    try { relative = decodeURIComponent(raw).replace(/^[/]+/, '') || 'index.html'; }
     catch { res.writeHead(400).end(); return; }
     if (!['GET','HEAD'].includes(req.method)) { res.writeHead(405).end(); return; }
     if (!publicFiles.has(relative)) { res.writeHead(404).end(); return; }
