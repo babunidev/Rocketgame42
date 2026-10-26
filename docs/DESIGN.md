@@ -20,4 +20,4 @@ The HTML has labels, semantic table markup, status announcements, focus manageme
 
 ## Portfolio presentation material to verify
 
-Capture before/after views of the original Flash and current SVG scene; document reconstructed vector art, timings and effects; acquire creator approval before presenting those artifacts as evidence of a particular design decision or historical milestone.
+Capture before/after views of the original Flash and current SVG scene; document reconstructed vector art, timings and effects; acquire Babuni.dev approval before presenting those artifacts as evidence of a particular design decision or historical milestone.
