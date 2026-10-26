@@ -30,6 +30,7 @@
     },
     "files": [
       "main.cjs",
+      "preload.cjs",
       "package.json",
       "source-manifest.json",
       "game/**/*",
@@ -40,7 +41,9 @@
       "target": [
         {
           "target": "portable",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "icon": "build/icon.png",
