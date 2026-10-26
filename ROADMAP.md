@@ -1,37 +1,31 @@
-# Roadmap
+# Roadmap — Preservation and Portfolio
 
-This roadmap describes *proposed development stages*, not approved features or delivery commitments.
+Status terms: verified in repository / source-identified but runtime-unverified / proposed.
 
-## Phase 0 — Foundation
+## Foundation
 
-- [x] Create documentation scaffold
-- [ ] Record the creator's original concept and constraints
-- [ ] Define the first playable experiment
-- [ ] Select platform, tools, and license
+- [x] Establish GitHub documentation structure (2026-10-26)
+- [x] Import modern source and preserved Flash material (commit 4d50ce6, 2026-10-26)
+- [x] Audit available source documentation and reconstruct an evidence-labeled initial history
+- [ ] Gather creator's account of the original game, versions and remake decisions
 
-## Phase 1 — Prototype
+## Technical verification
 
-- [ ] Implement the smallest representative gameplay loop
-- [ ] Test inputs and core feedback
-- [ ] Record what worked and what did not
+- [ ] Run browser version and document game-loop/control results
+- [ ] Check electron-builder packaging and missing icon reference
+- [ ] Check custom protocol access to OGG sound assets in portable build
+- [ ] Verify SHA-256 manifest against shipped game files
+- [ ] Run historical SWFs in a controlled archival player and compare behavior where lawful/practical
+- [ ] Add maintainable automated smoke/regression tests
 
-## Phase 2 — Vertical slice
+## Portfolio presentation
 
-- [ ] Integrate representative visuals, sound, and interface
-- [ ] Evaluate accessibility and performance
-- [ ] Decide whether to expand, revise, or stop
+- [ ] Capture approved screenshots/short gameplay footage of original and remake
+- [ ] Create a dated visual timeline, explicitly distinguishing evidence from recollection
+- [ ] Write a creator-led narrative of design motives, reconstruction challenges, and changes of direction
+- [ ] Prepare a playable web demo and/or release artifact after testing
+- [ ] Confirm asset credits, licensing and release permissions
 
-## Phase 3 — Production and release
+## Status
 
-- [ ] Define content scope and acceptance criteria
-- [ ] Add appropriate tests, build process, and packaging
-- [ ] Complete release checklist and credits
-
-## Milestone record
-
-| Milestone | Status | Evidence |
-| --- | --- | --- |
-| Documentation foundation | Implemented | Initial documentation commits, 2026-10-26 |
-| Playable prototype | Not started | — |
-| Vertical slice | Not started | — |
-| Release | Not started | — |
+The repository contains implemented source, not a blank prototype. **No successful runtime or build tests are recorded by this audit.**
