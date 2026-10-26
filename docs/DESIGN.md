@@ -1,27 +1,23 @@
-# Visual, Audio, and Interaction Design
+# Visual and Interaction Design — Source Review
 
-**Status:** Direction not yet specified.
+**Evidence level:** Source-inspected; not visually or interactively tested.
 
-## Art direction
+## Presentation
 
-To be established by the creator.
+The modern game uses a fixed internal **550 × 400 SVG viewBox** scaled into the available viewport. `source/game/assets.js` contains recovered vector artwork; `runtime.js` builds an SVG scene graph and applies transformations and effects. The browser page uses a dark full-screen backdrop and an overlaid high-score/start menu.
 
-## UI and navigation
+## Player interaction
 
-To be defined.
+The interface instructs players to move the mouse to steer, hold left click to fire the laser, and right click to release seeker missiles. The main menu explains blue/green/red asteroid effects. The high-score screen accepts a name (up to 16 characters) and displays the top ten.
 
-## Motion and feedback
+## Feedback
 
-To be defined.
+The code provides score/life/power indicators, glow and explosion effects, sound hooks, score rankings, and state-specific menu copy. These are **code-observed elements**, not claims about polish or successful playback.
 
-## Sound and music
+## Accessibility and responsive questions
 
-To be defined.
+The HTML has labels, semantic table markup, status announcements, focus management, and a named SVG stage. However, playable keyboard/controller equivalents, mobile touch controls, contrast, reduced-motion support, and screen-reader usability were not confirmed. The existing desktop-oriented mouse scheme should not be advertised as accessible across all input methods.
 
-## Accessibility
+## Portfolio presentation material to verify
 
-Specify keyboard/controller/touch support as applicable, contrast, readable text, reduced motion, and audio alternatives after platform and mechanics are chosen.
-
-## Design references and assets
-
-Record reference origin, licensing, author, and approval status before use.
+Capture before/after views of the original Flash and current SVG scene; document reconstructed vector art, timings and effects; acquire creator approval before presenting those artifacts as evidence of a particular design decision or historical milestone.
