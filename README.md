@@ -1,5 +1,7 @@
 # Raketenspiel 42 — Rocket Game 42
 
+**Author:** Babuni.dev
+
 An arcade defence game with roots in an older Flash project, reconstructed as a browser-playable HTML/JavaScript/SVG game and packaged in Electron for Windows. **The project has existing working-source material; runtime operation has not been independently tested in this documentation audit.**
 
 The player defends a mothership, steering with the mouse, firing a laser, and launching accumulated seeker missiles. Colored asteroids introduce risk and replenishment; local high scores retain runs.
