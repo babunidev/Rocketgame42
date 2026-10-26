@@ -41,3 +41,12 @@ The v1.42 user readme describes a self-contained 64-bit Windows portable build, 
 **Code review observations:** The Electron request allowlist may exclude the OGG files loaded by the audio helper; the package configuration references an icon absent from the imported file list; comments point to uncommitted `recovered-source/*.as` files. These are audit findings to verify, not confirmed runtime bugs.
 
 **Tests:** No game or build was executed during this review. No claims of successful gameplay or parity testing are made.
+
+
+## 2026-10-26 — A desktop button for spontaneous LAN play
+
+**Creator direction:** The creator wanted the local game application to have an explicit button labelled **Serve on Wi-Fi**. The intention was to host a game at gatherings without entering terminal commands each time, so friends on the same network could open it in their browser. This is a separate requirement from eventual public hosting and possible mobile controls.
+
+**AI interpretation and implementation:** Because web browsers cannot directly open arbitrary LAN server sockets, the assistant placed hosting in the Electron main process and exposed narrow start/stop/status actions to the local desktop game's interface through a preload bridge. The menu button opens a small panel showing local IPv4 URLs, a sharing control, and status. Remote browser players do not receive host controls. The server serves an explicit list of static game assets and uses TCP 4173.
+
+**Constraints and verification:** The HTTP listener binds to all IPv4 interfaces, so it must be used only on trusted networks with appropriate firewall settings. It does not create shared multiplayer or a combined leaderboard. Source files were committed directly to GitHub. The feature has not been executed or tested over a LAN, and the earlier Windows EXE does not automatically inherit the change; a new build is required.
