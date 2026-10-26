@@ -91,7 +91,18 @@
       <footer class="screen-footer">
         <p id="storage-note">Saved locally in this browser.</p>
       </footer>
+      <button id="serve-wifi" type="button" hidden>SERVE ON WI-FI</button>
       <button id="start-game" type="button">START GAME <span>▶</span></button>
+      <section id="wifi-panel" hidden role="dialog" aria-modal="true" aria-labelledby="wifi-heading">
+        <h2 id="wifi-heading">SERVE ON WI-FI</h2>
+        <p>Other people on your Wi-Fi or LAN can open:</p>
+        <div id="wifi-addresses" aria-live="polite"></div>
+        <p id="wifi-status" role="status" aria-live="polite"></p>
+        <div class="wifi-actions">
+          <button id="wifi-toggle" type="button">START SHARING</button>
+          <button id="wifi-close" type="button">CLOSE</button>
+        </div>
+      </section>
     </section>
   </main>
   <noscript><p style="color:white">Please enable JavaScript to play.</p></noscript>
@@ -101,5 +112,6 @@
   <script src="missiles.js?v=fps48"></script>
   <script src="runtime.js?v=fps48"></script>
   <script src="highscores.js?v=startmid"></script>
+  <script src="wifi.js"></script>
 </body>
 </html>
