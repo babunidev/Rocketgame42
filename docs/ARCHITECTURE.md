@@ -43,7 +43,7 @@ npm run dist       # Windows portable packaging
 
 ## Verification
 
-2026-10-26: Inspected named files via GitHub connector and checked repository import listing supplied by the creator. Browser execution, game simulation, builds, and cross-platform behavior **not verified**.
+2026-10-26: Inspected named files via GitHub connector and checked repository import listing supplied by Babuni.dev. Browser execution, game simulation, builds, and cross-platform behavior **not verified**.
 
 
 ## Local Wi-Fi serving (2026-10-26 source addition)
