@@ -2,32 +2,25 @@
 
 ## Roles
 
-**Creator:** Originates the vision, defines constraints, reviews experiments, and accepts or rejects major creative decisions.
+**Creator:** Babuni.dev is credited as maker in the v1.42 user readme, metadata and source README. The creator established the GitHub repository, supplied the local historical files, and requested documentation and review.
 
-**AI collaborator:** May research, propose alternatives, document tradeoffs, draft assets or code, implement changes when requested, and report verification.
+**AI collaborator:** An assistant initialized the documentation, guided Git configuration/import in chat, and audited the imported source to produce retrospective project records.
 
-## Required record
+## Important historical limit
 
-For significant work capture:
-1. Creator intent and stated reasons.
-2. AI proposals or interpretations, clearly labeled as proposals.
-3. Alternatives, objections, experiments, mistakes, and revisions.
-4. Explicit creator decisions versus unresolved topics.
-5. Changed file paths and commit/issue references.
-6. Tests performed, results, and anything still unverified.
+The imported snapshot contains a modern reconstruction, but it does **not** contain a dated authorship log for the Flash-to-JavaScript conversion, added mechanics, or packaging. Do not assign these individual implementations to AI or to a particular session without further evidence. Phrases such as “faithful translation” describe claims in source comments, not independent verification.
 
-## Publication
+## Required evidence trail
 
-Write faithful, readable summaries rather than raw private conversation transcripts. Do not publish sensitive information or private context. Attribute creator-originated ideas to the creator.
+Record creator direction; AI suggestions; alternatives and corrections; explicit decisions; changed files and commits; tests and remaining unknowns. Label reconstructed history clearly, distinguish code-observed features from working verified builds, and correct documents whenever the repository state changes.
 
-## Status terminology
+## 2026-10-26 — Documented collaboration
 
-- **Proposed:** Suggested, not approved.
-- **Approved:** Explicitly accepted by the creator.
-- **Implemented:** Present in files/code.
-- **Verified:** Tested with recorded result.
-- **Deferred/Rejected:** Not being implemented, with reasons when known.
+- Creator created and connected `babunidev/Rocketgame42` and pushed commit `4d50ce6` with 33 existing project files.
+- AI created the initial documentation structure, then revised it after the import exposed a previously undocumented Flash lineage and functional source.
+- AI identified source-based technical questions, but did not execute the game or establish its historical development dates.
+- The original creative decisions remain attributed to the creator unless specific evidence says otherwise.
 
-## First recorded collaboration
+## Publication policy
 
-2026-10-26: The creator requested that the newly created Rocketgame42 repository receive a project-development document structure. The assistant designed the documentation layout and wrote the initial Markdown files; no game-specific creative direction was attributed to the assistant or presumed approved.
+Publish careful narrative summaries, not raw private chats or sensitive information. Do not imply approval of AI proposals. Distinguish **proposed**, **accepted**, **implemented**, **tested**, and **historically inferred** statements.
