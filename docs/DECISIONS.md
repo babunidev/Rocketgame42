@@ -1,22 +1,30 @@
 # Decision Register
 
-Use: ID, date, subject, options, rationale, decision owner, status, and implementation evidence. Record rejected approaches when they explain a final choice.
+Separate explicit creator decisions from inferred technical decisions in existing code.
 
-## D-001 — Documentation before implementation
+## D-001 — Development documentation
 
-- **Date:** 2026-10-26
-- **Creator instruction:** Establish project-development documentation in Rocketgame42.
-- **AI implementation choice:** Use a small Markdown documentation system with separate creative, technical, historical, and verification records.
-- **Status:** Documentation implementation underway / completed once committed.
-- **Scope of approval:** Documentation setup only; no game concept, technology, or mechanics approved.
-- **Alternatives:** A single README would be smaller but would mix evolving concept, technical changes, and authorship history.
-- **Evidence:** Initial documentation commits.
+- **2026-10-26; confirmed creator request:** Establish a structured repository for game development. The assistant authored the scaffold. Implemented and committed.
 
-## Open decisions
+## D-002 — Preserve existing project material
 
-- Intended gameplay and meaning of the title
-- Target platform and input methods
-- Technology stack
-- Initial playable scope
-- Art/audio direction and asset policy
-- Licensing and release plan
+- **2026-10-26; confirmed creator action:** Import local source, older Flash versions, sounds and the v1.42 readme to GitHub as commit `4d50ce6`. Ignore generated app data, dependencies, packaged EXE/RAR. Implemented.
+- This does not establish the origin dates of the imported artifacts.
+
+## D-003 — Reconstruct Flash content as browser SVG/JS
+
+- **Evident in source, decision maker/reasons not independently documented:** `source/README.md` calls the remake a recovered HTML/JS/SVG version, not the original editable `.fla`.
+- **Status:** Implemented in imported source; original decision chronology unresolved.
+
+## D-004 — Maintain legacy rates at higher simulation frequency
+
+- **Evident in source:** `gameplay.js` and `runtime.js` describe converting 16 FPS behavior to 48 Hz logic with rate scaling. Implemented in code, fidelity not tested here.
+- **Rationale documented in comments:** retain original real-time behavior.
+
+## D-005 — Offline portable Windows shell
+
+- **Evident in source and readme:** Electron packaging, fixed custom origin for portable score data, constrained external requests. Implemented/configured; packaged runtime not verified.
+
+## Open decisions / missing testimony
+
+Meaning of “42”; original Flash creation chronology; which changes were creator-requested versus AI-assisted in the remake; whether historical SWF differences are design milestones; distribution rights; test/build acceptance criteria; future portfolio demo presentation.
