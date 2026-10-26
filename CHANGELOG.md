@@ -18,3 +18,12 @@ This file records changes supported by current repository evidence. The import i
 - Electron offline Windows x64 portable packaging configuration.
 
 These items existed at import; the repository does **not** prove when each was first added. No runtime verification is asserted.
+
+
+## 2026-10-26 — Serve on Wi-Fi (source implementation, unverified)
+
+- Added desktop-only **Serve on Wi-Fi** menu button with start/stop controls and LAN IPv4 URLs.
+- Added an Electron preload bridge and main-process static HTTP server on port 4173, restricted to known game files.
+- LAN server stops on application close; browser visitors do not receive server controls.
+- Added playable asset and OGG routes to the Electron protocol allowlist.
+- No runtime LAN test or packaged executable rebuild performed.
