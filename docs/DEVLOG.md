@@ -50,3 +50,13 @@ The v1.42 user readme describes a self-contained 64-bit Windows portable build, 
 **AI interpretation and implementation:** Because web browsers cannot directly open arbitrary LAN server sockets, the assistant placed hosting in the Electron main process and exposed narrow start/stop/status actions to the local desktop game's interface through a preload bridge. The menu button opens a small panel showing local IPv4 URLs, a sharing control, and status. Remote browser players do not receive host controls. The server serves an explicit list of static game assets and uses TCP 4173.
 
 **Constraints and verification:** The HTTP listener binds to all IPv4 interfaces, so it must be used only on trusted networks with appropriate firewall settings. It does not create shared multiplayer or a combined leaderboard. Source files were committed directly to GitHub. The feature has not been executed or tested over a LAN, and the earlier Windows EXE does not automatically inherit the change; a new build is required.
+
+## 2026-10-27 — Documentation audit #29: separating the game's generations
+
+After the original Flash materials and the reconstructed browser/Electron game had been imported, Babuni.dev's next practical concern was how other people could experience it. The request for a **Serve on Wi-Fi** button arose from the wish to share a working game at a gathering without turning a small demonstration into a command-line exercise. That user-facing simplicity became the design target; the internal mechanism was the assistant's implementation choice.
+
+The resulting code puts a small HTTP server inside the trusted Electron host and exposes its controls through a narrow preload bridge. The menu shows addresses that other devices can open, while browser visitors receive the game without the server-management interface. The game remains single-player for each visitor: this was not a request for—and does not implement—a synchronized LAN scoreboard or common game state.
+
+This audit inspected the current repository, including `source/main.cjs`, `source/preload.cjs`, `source/game/wifi.js`, and the earlier concept and source records. It reconciled the preservation narrative with the later implementation rather than rewriting the unknown history of the Flash originals. The original 2009 file timestamp is kept as a clue, not promoted to a dated release. Likewise, the historical v1.42 executable is not conflated with newer unbuilt source changes.
+
+**Current result:** Documentation clarified; executable code and assets left intact. **Still unverified:** browser and Windows packaged play, sound delivery, LAN second-device access, firewall behavior and historical gameplay fidelity. This entry records inspection, not a successful field test.
