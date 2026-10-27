@@ -37,3 +37,9 @@ Then open http://127.0.0.1:4173/ . This command is documented in source/package.
 The first documented repository import on **2026-10-26** added 33 source, asset, and legacy files in commit [4d50ce6](https://github.com/babunidev/Rocketgame42/commit/4d50ce6). This is the **repository-import date, not the original creation date**. The portable v1.42 readme describes a Windows x64 offline build; its EXE and RAR are deliberately excluded from Git tracking. They are not published by this repository.
 
 Some source references and code comments attest to earlier work, but a complete dated historical changelog was not found in the committed files. See the provenance notes in the [development journal](docs/DEVLOG.md).
+
+## Documentation audit #29 — 27 October 2026
+
+The repository includes a **Serve on Wi-Fi** feature in the Electron source, introduced after the imported v1.42 snapshot. A desktop-only control starts and stops an HTTP server on port 4173, displays available LAN IPv4 addresses, and allows other devices to load an independent browser game. This is **LAN access, not synchronized multiplayer**: scores and sessions are not shared. The shipped historical portable executable is not evidence that this newer source feature is included; a new build and real LAN verification remain outstanding.
+
+The GitHub documents distinguish the preserved Flash artifacts, modern reconstruction, October 2026 Wi-Fi extension, and portfolio possibilities. In particular, 2009 file metadata is not a verified original release date, and successful browser, Electron, Windows packaging, audio, LAN, and public-hosting tests are not claimed. See [architecture](docs/ARCHITECTURE.md), [decision history](docs/DECISIONS.md) and [development journal](docs/DEVLOG.md).
