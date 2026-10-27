@@ -24,3 +24,13 @@ Record Babuni.dev direction; AI suggestions; alternatives and corrections; expli
 ## Publication policy
 
 Publish careful narrative summaries, not raw private chats or sensitive information. Do not imply approval of AI proposals. Distinguish **proposed**, **accepted**, **implemented**, **tested**, and **historically inferred** statements.
+
+## 2026-10-27 — Numbered documentation audit #29
+
+**Babuni.dev direction:** Continue the repository-by-repository documentation effort with Rocketgame42. Earlier, Babuni.dev specifically requested **Serve on Wi-Fi** to make local sharing at gatherings practical without terminal setup.
+
+**AI contribution:** Inspect the current Electron LAN server, preload bridge, browser control, existing preserved Flash lineage and documentation; correct the public record to reflect the implemented but not yet runtime-tested desktop hosting system. The choice of a narrowly scoped HTTP server was an AI implementation interpretation of Babuni.dev's requested experience, not evidence that Babuni.dev independently specified its internal architecture.
+
+**Creative iteration:** Older documents concentrate on reconstructing the 550×400 Flash game as a browser/Electron application. The later Wi-Fi request extends how visitors can reach that application; it does not by itself introduce shared multiplayer. A future self-hosted public version has been discussed but is not represented as implemented.
+
+**Verification:** GitHub source and Markdown were examined. This audit does not run the game, test LAN networking, compile an Electron executable or certify legacy Flash behavior. No executable, assets or program files are modified by this documentation work.
