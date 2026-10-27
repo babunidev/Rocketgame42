@@ -32,3 +32,9 @@ These items existed at import; the repository does **not** prove when each was f
 - LAN server stops on application close; browser visitors do not receive server controls.
 - Added playable asset and OGG routes to the Electron protocol allowlist.
 - No runtime LAN test or packaged executable rebuild performed.
+
+## 2026-10-27 — Documentation audit #29
+
+- Clarified existing Electron-only **Serve on Wi-Fi** behavior in project overview, roadmap, architecture, decision register, development journal and collaboration record.
+- Separated archived Flash versions, modern reconstructed source, and the subsequent October 2026 LAN extension without inferring missing original history.
+- Recorded pending packaged build, sound and second-device LAN verification. No application source, binary, assets or tests changed during this audit.
