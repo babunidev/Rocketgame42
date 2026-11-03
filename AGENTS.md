@@ -2,7 +2,7 @@
 
 ## Ownership and attribution
 
-Babuni.dev owns creative direction and decides what enters the game's canon/design. Clearly distinguish Babuni.dev instructions, AI suggestions, agreed decisions, implemented code, and test results. Never treat an AI suggestion as accepted by default.
+Babuni owns creative direction and decides what enters the game's canon/design. Clearly distinguish Babuni's instructions, AI suggestions, agreed decisions, implemented code, and test results. Never treat an AI suggestion as accepted by default.
 
 ## Before coding
 
@@ -14,7 +14,7 @@ Babuni.dev owns creative direction and decides what enters the game's canon/desi
 ## With every substantial change
 
 - Update README.md when project setup or status changes.
-- Update CONCEPT.md / docs/GAME_DESIGN.md when Babuni.dev establishes game direction.
+- Update CONCEPT.md / docs/GAME_DESIGN.md when Babuni establishes game direction.
 - Update docs/ARCHITECTURE.md / docs/DESIGN.md / docs/CONTENT.md when relevant.
 - Update ROADMAP.md and CHANGELOG.md to reflect actual status.
 - Append a narrative entry to docs/DEVLOG.md and material decisions to docs/DECISIONS.md.
@@ -26,8 +26,12 @@ Use accessible inputs and readable feedback; respect responsive behavior and per
 
 ## Collaboration history
 
-Maintain Babuni.dev's reasoning, meaningful alternatives, disagreements, rejected ideas, and corrections in publication-safe summaries. Link related paths, commits, or issues when available.
+Maintain Babuni's reasoning, meaningful alternatives, disagreements, rejected ideas, and corrections in publication-safe summaries. Link related paths, commits, or issues when available.
 
 ## Author attribution
 
-Credit **Babuni.dev** as the original project author. Do not use “creator” as a title for Babuni.dev; identify separately any AI work, later reconstructions and third-party components.
+Credit **Babuni** as the original human creative. Do not use “creator” as a title for Babuni.dev; identify separately any AI work, later reconstructions and third-party components.
+
+## Repository-local documentation standard
+
+Before writing or changing project documentation, read [docs/DOCUMENTATION.md](docs/DOCUMENTATION.md). These rules travel with this repository and do not depend on the babuni.dev ChatGPT Project. Preserve all project-specific technical, creative, canon, safety, licensing, and historical rules in this file; follow the linked standard for public first-person narrative, human–AI attribution, concise development journals, decision records, and evidence-based verification. **Babuni** is the human creative; **babuni.dev** is the website/portfolio, not the person. Preserve third-party credits and historical legal notices. References above to a dated “documentation-only audit” describe that past task, not a permanent ban on later authorized implementation.
