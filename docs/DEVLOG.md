@@ -42,7 +42,6 @@ The v1.42 user readme describes a self-contained 64-bit Windows portable build, 
 
 **Tests:** No game or build was executed during this review. No claims of successful gameplay or parity testing are made.
 
-
 ## 2026-10-26 — A desktop button for spontaneous LAN play
 
 **Babuni.dev direction:** Babuni.dev wanted the local game application to have an explicit button labelled **Serve on Wi-Fi**. The intention was to host a game at gatherings without entering terminal commands each time, so friends on the same network could open it in their browser. This is a separate requirement from eventual public hosting and possible mobile controls.
