@@ -38,3 +38,8 @@ These items existed at import; the repository does **not** prove when each was f
 - Clarified existing Electron-only **Serve on Wi-Fi** behavior in project overview, roadmap, architecture, decision register, development journal and collaboration record.
 - Separated archived Flash versions, modern reconstructed source, and the subsequent October 2026 LAN extension without inferring missing original history.
 - Recorded pending packaged build, sound and second-device LAN verification. No application source, binary, assets or tests changed during this audit.
+
+## 2026-11-13 — License and rights
+
+- Established MIT for original game code, with legacy, art and audio assets separately treated and updated repository documentation to explain the permission boundary.
+- Preserved third-party authorship and external assets' separate terms. No gameplay or runtime verification is claimed.
