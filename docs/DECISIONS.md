@@ -41,3 +41,7 @@ Meaning of “42”; original Flash creation chronology; which changes were Babu
 - **User direction:** Continue the numbered repository documentation audit with #29, improving existing history without modifying the game.
 - **AI contribution:** Consolidate the Flash archive, JS/SVG reconstruction and Wi-Fi extension into separately evidenced stages. Preserve unknown original dates and motivations rather than completing the history by speculation.
 - **Status:** Documentation-only update. No game, packaging, or LAN validation in this audit.
+
+## 2026-11-13 — Licensing decision
+
+To make the reuse terms explicit, I approved MIT for original game code, with sound, artwork and legacy materials separately documented. This applies only to material for which the relevant rights can be granted; third-party contributors keep their own credits and licenses. AI assistance committed the license notice and updated project-facing documentation. This was a legal/documentation change, not a runtime feature or test.
