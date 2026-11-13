@@ -60,3 +60,7 @@ The resulting code puts a small HTTP server inside the trusted Electron host and
 This audit inspected the current repository, including `source/main.cjs`, `source/preload.cjs`, `source/game/wifi.js`, and the earlier concept and source records. It reconciled the preservation narrative with the later implementation rather than rewriting the unknown history of the Flash originals. The original 2009 file timestamp is kept as a clue, not promoted to a dated release. Likewise, the historical v1.42 executable is not conflated with newer unbuilt source changes.
 
 **Current result:** Documentation clarified; executable code and assets left intact. **Still unverified:** browser and Windows packaged play, sound delivery, LAN second-device access, firewall behavior and historical gameplay fidelity. This entry records inspection, not a successful field test.
+
+## 2026-11-13 — Giving the repository clear permissions
+
+Public source alone did not explain what others could reuse, so I approved MIT for the reconstructed game code, with audio, artwork and historical files under separate terms. AI assistance added the license and brought the project notes into agreement, without changing how the application runs. Other people's content retains its own terms.
