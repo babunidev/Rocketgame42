@@ -1,5 +1,7 @@
 # Human–AI Collaboration and Attribution
 
+Follow [the documentation standard](DOCUMENTATION.md) for first-person author voice throughout project documentation, factual changelogs, and naming the AI tool and verified model for each contribution.
+
 ## Roles
 
 **Babuni.dev:** Babuni.dev is credited as maker in the v1.42 user readme, metadata and source README. Babuni.dev established the GitHub repository, supplied the local historical files, and requested documentation and review.
