@@ -61,6 +61,20 @@ This audit inspected the current repository, including `source/main.cjs`, `sourc
 
 **Current result:** Documentation clarified; executable code and assets left intact. **Still unverified:** browser and Windows packaged play, sound delivery, LAN second-device access, firewall behavior and historical gameplay fidelity. This entry records inspection, not a successful field test.
 
+## 2026-10-29 — A logo drawn from the existing game
+
+**Creator direction:** Inspect the game designs and create a cool, flashy, stylish logo.
+
+**AI contribution:** Reviewed the repository on `main`, design notes, existing title and interface styles, then opened the local start menu to inspect the rocket artwork and palette. Created a logo proposal with the built-in image generation tool: silver/blue angular lettering, lime “42,” and a blue/silver rocket with an orange exhaust arc. This interpretation is a proposal, not an accepted change to the game’s canon.
+
+**Delivered:** [Transparent logo and full prompt](../assets/branding/README.md). No runtime code was changed.
+
+**Verification:** Visually inspected the generated title spelling, number, composition and padding. Confirmed the saved file is a 1774 × 887 RGBA PNG. The local start menu rendered; gameplay, small-size readability and UI integration were not tested. Creator acceptance and placement remain open.
+
+## 2026-10-29 — English title and square composition
+
+**Creator direction:** Enthusiastically approved the first logo, then requested a square version called Rocket Game, noting the English translation. **AI contribution:** Adapted the original using the built-in image tool, stacking ROCKET and GAME above the lime 42 while preserving the rocket and fiery arc. Saved the new asset beside the original, with its exact prompt. **Verification:** Visually checked spelling and composition and confirmed a square RGBA PNG. No game code changed or gameplay tests run. Placement remains undecided.
+
 ## 2026-11-13 — Giving the repository clear permissions
 
 Public source alone did not explain what others could reuse, so I approved MIT for the reconstructed game code, with audio, artwork and historical files under separate terms. AI assistance added the license and brought the project notes into agreement, without changing how the application runs. Other people's content retains its own terms.

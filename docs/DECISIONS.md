@@ -25,7 +25,7 @@ Separate explicit Babuni.dev decisions from inferred technical decisions in exis
 
 - **Evident in source and readme:** Electron packaging, fixed custom origin for portable score data, constrained external requests. Implemented/configured; packaged runtime not verified.
 
-## Open decisions / missing testimony
+## Remaining historical questions
 
 Meaning of “42”; original Flash creation chronology; which changes were Babuni.dev-requested versus AI-assisted in the remake; whether historical SWF differences are design milestones; distribution rights; test/build acceptance criteria; future portfolio demo presentation.
 
@@ -41,6 +41,19 @@ Meaning of “42”; original Flash creation chronology; which changes were Babu
 - **User direction:** Continue the numbered repository documentation audit with #29, improving existing history without modifying the game.
 - **AI contribution:** Consolidate the Flash archive, JS/SVG reconstruction and Wi-Fi extension into separately evidenced stages. Preserve unknown original dates and motivations rather than completing the history by speculation.
 - **Status:** Documentation-only update. No game, packaging, or LAN validation in this audit.
+
+## D-008 — Create a logo proposal
+
+- **2026-10-29; creator request:** Inspect existing game designs and create a cool, flashy, stylish logo.
+- **AI proposal:** Retain the displayed Raketenspiel 42 title and existing blue/silver, orange, navy and lime cues; introduce metallic slanted lettering and an exhaust arc.
+- **Delivered:** `assets/branding/raketenspiel-42-logo-v1.png`, with the full prompt and provenance alongside it.
+- **Follow-up:** Creator approved the visual direction; eventual placement remains unresolved. No game UI integration was requested or implemented.
+
+## D-009 — English square logo
+
+- **2026-10-29; creator direction:** Approved the initial logo style and requested a square version called Rocket Game, explaining that the game had been translated to English.
+- **Implemented artwork:** Square English variant with 42 retained; original preserved.
+- **Open:** Placement in the game and review of the new square composition. This request does not establish that all existing source text has been translated.
 
 ## 2026-11-13 — Licensing decision
 

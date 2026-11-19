@@ -20,6 +20,9 @@ Status terms: verified in repository / source-identified but runtime-unverified 
 
 ## Portfolio presentation
 
+- [x] Create an initial logo proposal informed by the existing game (2026-10-29)
+- [x] Creator review of initial logo direction (placement remains open)
+
 - [ ] Capture approved screenshots/short gameplay footage of original and remake
 - [ ] Create a dated visual timeline, explicitly distinguishing evidence from recollection
 - [ ] Write a Babuni.dev-led narrative of design motives, reconstruction challenges, and changes of direction
@@ -40,3 +43,9 @@ The repository contains implemented source, not a blank prototype. **No successf
 - [ ] Resolve the referenced Windows icon, legacy source provenance, asset rights and build/release verification before publication.
 
 These are documentation checks, not new feature commitments. No runtime acceptance was carried out in this audit.
+
+## Logo follow-up — 2026-10-29
+
+- [x] Creator approved the original logo’s visual direction.
+- [x] Create a square English Rocket Game logo retaining 42.
+- [ ] Decide where to integrate the logo in the UI.

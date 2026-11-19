@@ -11,6 +11,12 @@
 
 This file records changes supported by current repository evidence. The import is a snapshot, **not** a chronological commit-by-commit account of past development.
 
+## 2026-10-29 — Logo proposal
+
+- Added a transparent PNG logo proposal and its generation prompt in `assets/branding/` at the creator's request.
+- Based on the rendered start menu and documented visual language; AI-authored treatment awaits creator acceptance. No runtime code changed.
+- Visually checked text and composition; verified PNG dimensions of 1774 × 887 and RGBA format. No gameplay tests performed.
+
 ## 2026-10-26 — Documentation and source preservation
 
 - Initialized development documents in the new GitHub repository.
@@ -42,6 +48,12 @@ These items existed at import; the repository does **not** prove when each was f
 - Clarified existing Electron-only **Serve on Wi-Fi** behavior in project overview, roadmap, architecture, decision register, development journal and collaboration record.
 - Separated archived Flash versions, modern reconstructed source, and the subsequent October 2026 LAN extension without inferring missing original history.
 - Recorded pending packaged build, sound and second-device LAN verification. No application source, binary, assets or tests changed during this audit.
+
+## 2026-10-29 — Square English logo
+
+- Creator approved the first logo style and requested English wording, Rocket Game.
+- Added a square transparent Rocket Game 42 variant; preserved the original asset.
+- Visually checked wording and composition; verified equal PNG width/height and RGBA format. No runtime changes or gameplay tests.
 
 ## 2026-11-13 — License and rights
 

@@ -25,3 +25,7 @@ The meaning of “42”; circumstances and original date of creation; inspiratio
 ## Authorship
 
 Babuni.dev is credited as Babuni.dev in the present source, game metadata, and v1.42 readme. Code-level authorship attribution for individual reconstruction steps cannot be reliably inferred from the imported snapshot.
+
+## 2026-10-29 — Creator-confirmed logo direction
+
+The creator approved the first logo’s visual style and requested a square version using the English title **Rocket Game**. The square artwork retains the existing 42. This establishes English wording for the new logo; source/UI renaming has not been implemented.
