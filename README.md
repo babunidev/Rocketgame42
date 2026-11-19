@@ -8,8 +8,8 @@ The player defends a mothership, steering with the mouse, firing a laser, and la
 
 ## Repository guide
 
-- [CONCEPT.md](CONCEPT.md) — recovered creative concept and confirmed experience
-- [ROADMAP.md](ROADMAP.md) — preservation, verification, and portfolio work
+- [CONCEPT.md](docs/CONCEPT.md) — recovered creative concept and confirmed experience
+- [ROADMAP.md](docs/ROADMAP.md) — preservation, verification, and portfolio work
 - [CHANGELOG.md](CHANGELOG.md) — evidence-based changes, not an invented release history
 - [AGENTS.md](AGENTS.md) — collaborator instructions
 - [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) — implemented game mechanics
@@ -46,4 +46,4 @@ The GitHub documents distinguish the preserved Flash artifacts, modern reconstru
 
 ## License
 
-Original reconstructed software is licensed under [MIT](LICENSE). Game artwork, sound, identity and legacy materials require separate treatment described in [asset rights](ASSET_RIGHTS.md).
+Original reconstructed software is licensed under [MIT](LICENSE). Game artwork, sound, identity and legacy materials require separate treatment described in [asset rights](docs/ASSET_RIGHTS.md).

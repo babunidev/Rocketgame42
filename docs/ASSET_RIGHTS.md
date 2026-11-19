@@ -1,6 +1,6 @@
 # Game code, historical material and assets
 
-The original reconstructed Rocket Game 42 code and associated software documentation are licensed under [MIT](LICENSE).
+The original reconstructed Rocket Game 42 code and associated software documentation are licensed under [MIT](../LICENSE).
 
 The game identity, original sound, artwork and embedded or exported media are not automatically licensed under MIT unless separately marked. Babuni reserves any rights it holds in original creative assets.
 
