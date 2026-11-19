@@ -1,40 +1,27 @@
-# Human–AI Collaboration and Attribution
+# Human–AI collaboration
 
-Follow [the documentation standard](DOCUMENTATION.md) for first-person author voice throughout project documentation, factual changelogs, and naming the AI tool and verified model for each contribution.
+## How I work with AI
 
-## Recovering the game
+Every project here begins with something I want to see in a game, on a screen or in a story. The ideas, the direction and the decisions are mine, and so are the playtests and the checks on my own devices. AI helps me get there. In my early projects that meant asking ChatGPT for Lua in a conversation, copying the changes into local files and trying them in the game. Today coding agents work directly in the repositories: they research, write code and documentation and run tests, while I decide what to build, try it out and say what works and what doesn't.
 
-For Rocketgame42, I supplied the local historical files and opened the repository to document the game. The v1.42 readme, metadata and source README preserve the original game credit. An AI assistant helped organize the import and inspect the source for the retrospective records.
+Two rules hold this record together. Work is credited to whoever did it: the story is told in my voice, but when AI wrote code or a document, the record says so and names the tool and, where it is known, the model. And a plan is not a result: proposed, accepted, built, tested and published stay separate, and an automated test by an AI is not the same as my own check in the game or on my phone.
 
-## Important historical limit
+## Who did what
 
-The imported snapshot contains a modern reconstruction, but it does **not** contain a dated authorship log for the Flash-to-JavaScript conversion, added mechanics, or packaging. Do not assign these individual implementations to AI or to a particular session without further evidence. Phrases such as “faithful translation” describe claims in source comments, not independent verification.
+| Who | Role | Model as recorded |
+| --- | --- | --- |
+| **Babuni** | Creative: ideas, direction, decisions, corrections, playtesting and device checks | — |
+| **Codex** | Coding agent in the repository: research, code, documentation and tests | GPT-6 |
+| **Claude Code** | Coding agent in the repository: research, code, documentation and tests | Claude Opus 5.5 |
+| **Earlier AI help** | Work that older entries describe only as “AI” | Tool and model not recorded |
 
-## Required evidence trail
+The journal and the changelog name the tool for each piece of AI work. A model that was not recorded stays unrecorded rather than guessed.
 
-Record My direction; AI suggestions; alternatives and corrections; explicit decisions; changed files and commits; tests and remaining unknowns. Label reconstructed history clearly, distinguish code-observed features from working verified builds, and correct documents whenever the repository state changes.
+## Where the details are
 
-## 2026-10-26 — Documented collaboration
+- [Development journal](DEVLOG.md): the story of the project in my voice, including what I asked for and what AI did.
+- [Decision record](DECISIONS.md): what was decided, by whom and why.
+- [Changelog](../CHANGELOG.md): what changed and how it was checked.
+- [Documentation standard](DOCUMENTATION.md) and [AGENTS.md](../AGENTS.md): the writing and working rules for everyone who contributes, human or AI.
 
-- To open the project, I created and connected `babunidev/Rocketgame42` and pushed commit `4d50ce6` with 33 existing project files.
-- AI created the initial documentation structure, then revised it after the import exposed a previously undocumented Flash lineage and functional source.
-- AI identified source-based technical questions, but did not execute the game or establish its historical development dates.
-- The record credits decisions to me where the evidence supports it.
-
-## Publication policy
-
-Publish careful narrative summaries, not raw private chats or sensitive information. Do not imply approval of AI proposals. Distinguish **proposed**, **accepted**, **implemented**, **tested**, and **historically inferred** statements.
-
-## 2026-10-27 — Numbered documentation audit #29
-
-**My direction:** Continue the repository-by-repository documentation effort with Rocketgame42. Earlier, I requested **Serve on Wi-Fi** to make local sharing at gatherings practical without terminal setup.
-
-**AI contribution:** Inspect the current Electron LAN server, preload bridge, browser control, existing preserved Flash lineage and documentation; correct the public record to reflect the implemented but not yet runtime-tested desktop hosting system. The choice of a narrowly scoped HTTP server was an AI implementation interpretation of the local hosting experience I asked for. The AI chose the internal HTTP architecture.
-
-**Creative iteration:** Older documents concentrate on reconstructing the 550×400 Flash game as a browser/Electron application. The later Wi-Fi request extends how visitors can reach that application; it does not by itself introduce shared multiplayer. A future self-hosted public version has been discussed but is not represented as implemented.
-
-**Verification:** GitHub source and Markdown were examined. This audit does not run the game, test LAN networking, compile an Electron executable or certify legacy Flash behavior. No executable, assets or program files are modified by this documentation work.
-
-## 18 November 2026 — Collaboration record review
-
-At my request, Codex (GPT-6) revised this record for first-person voice and checked the attribution against the available repository documentation. Where an earlier AI tool or model is missing from the record, its identity remains unconfirmed.
+The earlier, longer version of this record, as it stood on 18 November 2026, is kept in the [Git history](https://github.com/babunidev/Rocketgame42/blob/cb3c8c53187faea71681fde1882d328451eabc70/docs/AI_COLLABORATION.md).
