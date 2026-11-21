@@ -1,54 +1,41 @@
-# Roadmap — Preservation and Portfolio
+# Roadmap
 
-Status terms: verified in repository / source-identified but runtime-unverified / proposed.
+What is done, what comes next and what is still open. Each item says what kind of evidence backs it; "tested" means an automated or headless-browser check unless it says "on a real device".
 
-## Foundation
+## Done
 
-- [x] Establish GitHub documentation structure (2026-10-26)
-- [x] Import modern source and preserved Flash material (commit 4d50ce6, 2026-10-26)
-- [x] Audit available source documentation and reconstruct an evidence-labeled initial history
-- [ ] Gather Babuni.dev's account of the original game, versions and remake decisions
-
-## Technical verification
-
-- [ ] Run browser version and document game-loop/control results
-- [ ] Check electron-builder packaging and missing icon reference
-- [ ] Check custom protocol access to OGG sound assets in portable build
-- [ ] Verify SHA-256 manifest against shipped game files
-- [ ] Run historical SWFs in a controlled archival player and compare behavior where lawful/practical
-- [ ] Add maintainable automated smoke/regression tests
-
-## Portfolio presentation
-
-- [x] Create an initial logo proposal informed by the existing game (2026-10-29)
-- [x] Creator review of initial logo direction (placement remains open)
-
-- [ ] Capture approved screenshots/short gameplay footage of original and remake
-- [ ] Create a dated visual timeline, explicitly distinguishing evidence from recollection
-- [ ] Write a Babuni.dev-led narrative of design motives, reconstruction challenges, and changes of direction
-- [x] Prepare a playable web release with a global high-score list and touch controls (source ready 2026-11-21; see `source/server/README.md`)
-- [x] Deploy to `https://babuni.dev/Rocketgame42/` (2026-11-21, release `c7c3c22`)
-- [ ] Test on a real phone, iPhone sound included, and a score shared between two devices
+- [x] Repository and documentation structure (2026-10-26)
+- [x] Import of the reconstructed source and the Flash archive (commit `4d50ce6`, 2026-10-26)
+- [x] History reconstructed from the evidence, with gaps labelled (2026-10-26, audit #29 on 2026-10-27)
+- [x] Serve on Wi-Fi in the Electron source (2026-10-26; not tested on a LAN)
+- [x] Logo: wide and square English versions, direction approved (2026-10-29)
+- [x] MIT license for the code, with separate terms for the assets (2026-11-13)
+- [x] Web release with a global top-100 high-score list and touch controls, live at [babuni.dev/Rocketgame42](https://babuni.dev/Rocketgame42/) (2026-11-21, release `c7c3c22`; 11 server tests and 18 headless-browser checks passed, live site checked)
+- [x] Automated tests for the score server (`source/tests/`)
 - [x] Website play module with a shareable QR code (2026-11-21)
-- [ ] Confirm asset credits, licensing and release permissions
+- [x] Checked the v1.42 hash manifest: none of its six files match, not even at the import (2026-11-21)
 
-## Status
+## Next
 
-The repository contains implemented source, not a blank prototype. **No successful runtime or build tests are recorded by this audit.**
+- [ ] Play on a real phone: touch controls, iPhone sound, and a saved score appearing on a second device
+- [ ] Scan the QR code with a real phone
+- [ ] Run the Electron app with the current source (the new `touch.js`/`touch.css` are in its file allowlist but untested)
+- [ ] Build the Windows portable app from the current source and test it, including Ogg sound through the custom protocol
+- [ ] Fix the icon for packaging: `source/build/icon.png` exists locally but the root `.gitignore` rule `build/` keeps it out of Git
+- [ ] Test Serve on Wi-Fi with a second device: start/stop, port conflicts, addresses shown, sound, separate high scores per browser, firewall
+- [ ] Decide what `source/source-manifest.json` is for now (a record of v1.42, or regenerate it for the current files)
 
-## Documentation audit #29 — 2026-10-27
+## Portfolio
 
-- [x] Reconcile the imported Flash/modern source history with the later Serve on Wi-Fi extension in README, architecture, decisions and development journal.
-- [x] Distinguish browser hosting from synchronized multiplayer; document that the Electron-only host controls are not available to remote browser visitors.
-- [ ] Run a packaged desktop build and test start/stop hosting, port conflicts, LAN address display, HTTP assets and audio from a second device.
-- [ ] Confirm that desktop-local and remotely opened browser high scores remain separate, and record browser-storage persistence.
-- [ ] Review listener exposure and firewall considerations before using the host outside a trusted LAN.
-- [ ] Resolve the referenced Windows icon, legacy source provenance, asset rights and build/release verification before publication.
+- [ ] Write down my own account of the original game, its versions and why I rebuilt it
+- [ ] Screenshots or short gameplay footage of the Flash original and the remake
+- [ ] A dated visual timeline that keeps evidence apart from memory
+- [ ] Decide where the logo appears in the game
+- [ ] Confirm asset credits, rights and release permissions for the historical material
 
-These are documentation checks, not new feature commitments. No runtime acceptance was carried out in this audit.
+## Open technical questions
 
-## Logo follow-up — 2026-10-29
-
-- [x] Creator approved the original logo’s visual direction.
-- [x] Create a square English Rocket Game logo retaining 42.
-- [ ] Decide where to integrate the logo in the UI.
+- Compare the historical SWFs with the remake in an archival player, where that is lawful and practical.
+- Look for the `recovered-source/*.as` files mentioned in comments; they are not in the repository.
+- Keyboard or controller play, contrast, reduced motion and screen-reader use are not designed or tested.
+- Keep Serve on Wi-Fi to trusted networks: it listens on all IPv4 interfaces.

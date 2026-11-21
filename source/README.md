@@ -1,24 +1,24 @@
-# Raketenspiel 42 by Babuni.dev — development source
+# Rocket Game 42 (Raketenspiel 42) — development source
 
 Recovered from **Raketenspiel 42 v1.42 Portable.exe** (Electron 44.7.0). Editable HTML/JS/SVG remake of the old Flash game — not the original `.fla`.
 
-**Maker:** [Babuni.dev](https://babuni.dev)
+**Creative:** Babuni ([babuni.dev](https://www.babuni.dev))
 
 ## Layout
 
 | Path | Role |
 |------|------|
 | `game/gameplay.js` | Rules, scoring, lasers, special asteroids |
-| `game/runtime.js` | SVG scene graph / timing (16 Hz logic, 30 FPS draw) |
+| `game/runtime.js` | SVG scene graph, timing (48 Hz logic and drawing), input |
 | `game/assets.js` | Vector art (`window.RAKETENSPIEL_ASSETS`) |
 | `game/highscores.js` / `.css` | High-score UI: global list from the server, or local |
 | `game/touch.js` / `.css` | On-screen touch controls (steer, laser, rockets) |
 | `server/` | Web server, global score database and deployment for babuni.dev/Rocketgame42 |
 | `game/index.html` | Shell page |
 | `main.cjs` | Electron window + portable data folder |
-| `build/icon.png` | Window / build icon |
+| `build/icon.png` | Window / build icon (not in Git: the root `.gitignore` excludes `build/`) |
 
-Original 2009 SWFs (reference only) live in `../RaketenspielOLD/`.
+The older Flash versions (reference only) live in `../RaketenspielOLD/`; their dates are not verified.
 
 ## Edit and play (Linux-friendly)
 
@@ -51,7 +51,7 @@ Output goes to `dist/` (electron-builder Windows portable). Cross-building from 
 
 ## Integrity
 
-`source-manifest.json` stores SHA-256 hashes of the shipped `game/` files from v1.42. Re-check after unpack:
+`source-manifest.json` stores SHA-256 hashes of six `game/` files as shipped in v1.42. None of them matched the imported source on 2026-10-26 or later, so expect `CHANGED`; the check is useful only against files unpacked from the v1.42 EXE:
 
 ```bash
 python3 - <<'PY'
@@ -72,3 +72,11 @@ Run `npm start` from `source/` and choose **SERVE ON WI-FI** on the start menu. 
 The hosting button exists **only in the Electron desktop app**, not a regular browser or the hosted clients. Each guest plays independently; high scores are stored in each visitor's browser, not shared.
 
 LAN access may require allowing TCP 4173 through the host firewall. Avoid untrusted/public networks: `0.0.0.0` listens on all IPv4 interfaces. Port 4173 must be free. The existing Windows portable executable was built before this change and must be rebuilt to include it. This feature has not yet been tested in a live Electron/LAN session.
+
+## Tests
+
+```bash
+python3 -m unittest discover -s tests -p 'test_*.py'   # web server and high-score API
+```
+
+The web release and its deployment are described in [server/README.md](server/README.md).

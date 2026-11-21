@@ -1,57 +1,43 @@
-# Raketenspiel 42 — Rocket Game 42
+# Rocket Game 42 (Raketenspiel 42)
 
-**Author:** Babuni.dev
+**Creative:** Babuni · **Play:** [babuni.dev/Rocketgame42](https://babuni.dev/Rocketgame42/)
 
-An arcade defence game with roots in an older Flash project, reconstructed as a browser-playable HTML/JavaScript/SVG game and packaged in Electron for Windows. **The project has existing working-source material; runtime operation has not been independently tested in this documentation audit.**
+Rocket Game 42 is a small arcade defence game. You steer a ship along the bottom of the screen and protect the mothership from rockets, asteroids and an enemy craft. Your weapons are a laser and a stock of seeker missiles that grows with your score. Coloured asteroids can repair your shield, refill the laser or cause damage. At the end of a run you put your name on the high-score board.
 
-The player defends a mothership, steering with the mouse, firing a laser, and launching accumulated seeker missiles. Colored asteroids introduce risk and replenishment; local high scores retain runs.
+The game began as a Flash game. Its versions are preserved in numbered files up to 42, but their dates are unknown. The current version is a reconstruction in HTML, JavaScript and SVG that runs in any browser, without Flash.
+
+## Play
+
+- **On the web:** [babuni.dev/Rocketgame42](https://babuni.dev/Rocketgame42/). It has one global high-score list, the best 100 runs with the top 10 shown, and on-screen controls on phones and tablets. The [Play Rocket Game 42 module](https://www.babuni.dev/#project=rocket-game-42&read=play-live) on my website has the play button and a [shareable QR code](assets/qr/README.md).
+- **Controls:** with a mouse, move to steer, hold the left button for the laser and right-click to launch the seeker missiles. On a touch screen, drag the steering pad (or touch the playfield) to steer, hold **LASER** and tap **ROCKETS**.
+- **Offline:** the Electron desktop app and its **Serve on Wi-Fi** option keep high scores in each browser. See [source/README.md](source/README.md).
+
+## Status
+
+Live on babuni.dev since 21 November 2026, with release `c7c3c22`. Automated server tests, headless-browser checks and checks of the live site have passed. Still untested: play on a real phone (including iPhone sound), the Electron app and a Windows build of the current source, and Serve on Wi-Fi with a second device. The [roadmap](docs/ROADMAP.md) lists what comes next.
 
 ## Repository guide
 
-- [CONCEPT.md](docs/CONCEPT.md) — recovered creative concept and confirmed experience
-- [ROADMAP.md](docs/ROADMAP.md) — preservation, verification, and portfolio work
-- [CHANGELOG.md](CHANGELOG.md) — evidence-based changes, not an invented release history
-- [AGENTS.md](AGENTS.md) — collaborator instructions
-- [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) — implemented game mechanics
-- [docs/DESIGN.md](docs/DESIGN.md) — presentation, controls, accessibility
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) — systems, packaging, verification
-- [docs/CONTENT.md](docs/CONTENT.md) — source/assets/legacy inventory
-- [docs/DEVLOG.md](docs/DEVLOG.md) — narrative development history and retrospective reconstruction
-- [docs/DECISIONS.md](docs/DECISIONS.md) — evidence and unresolved decisions
-- [docs/AI_COLLABORATION.md](docs/AI_COLLABORATION.md) — attribution method
-- [source/README.md](source/README.md) — developer run/build instructions
+| Read | For |
+| --- | --- |
+| [docs/CONCEPT.md](docs/CONCEPT.md) | The game's idea and what is known about its history |
+| [docs/GAME_DESIGN.md](docs/GAME_DESIGN.md) | Rules, controls, special asteroids, missiles and high scores |
+| [docs/DESIGN.md](docs/DESIGN.md) | Look, controls on each device, logo, accessibility |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | How the code, desktop app and web server fit together |
+| [docs/CONTENT.md](docs/CONTENT.md) | What files the repository holds, including the Flash archive |
+| [docs/ROADMAP.md](docs/ROADMAP.md) | What is done, what is next, what is open |
+| [docs/DEVLOG.md](docs/DEVLOG.md) | The development story in my words |
+| [docs/DECISIONS.md](docs/DECISIONS.md) | Decisions, alternatives and open questions |
+| [CHANGELOG.md](CHANGELOG.md) | What changed, by date |
+| [docs/AI_COLLABORATION.md](docs/AI_COLLABORATION.md) | How I work with AI here |
+| [source/README.md](source/README.md) | Running, editing and building the game |
+| [source/server/README.md](source/server/README.md) | The web server, score database and deployment |
+| [AGENTS.md](AGENTS.md), [docs/DOCUMENTATION.md](docs/DOCUMENTATION.md) | Rules for contributors and AI agents |
 
-## Web release
+## Where the files are
 
-The game can run on babuni.dev at `https://babuni.dev/Rocketgame42/` with one global high-score list and on-screen touch controls for phones and tablets. The server and deployment steps are in [source/server/README.md](source/server/README.md). **Status (2026-11-21):** live at https://babuni.dev/Rocketgame42/ (release `c7c3c22`); not yet tested on a real phone. The website project has a **Play Rocket Game 42** module; its [shareable QR code](assets/qr/README.md) opens that module.
-
-## Development source
-
-`source/game/` holds game logic, the SVG scene runtime, embedded vector assets, missiles, sound, and high scores. `source/main.cjs` provides the Electron shell. `RaketenspielOLD/` holds legacy Flash/HTML material. The original editable Flash authoring file is not present in the committed inventory; the developer README identifies the modern version as a reconstruction, not the original .fla.
-
-Run the browser version (requires Python 3):
-```sh
-cd source
-npm run dev:web
-```
-Then open http://127.0.0.1:4173/ . This command is documented in source/package.json but was **not executed in the 2026-10-26 audit**. Electron launch: `cd source && npm install && npm start`. Windows packaging: `npm run dist`.
-
-## Provenance and status
-
-A [proposed logo](assets/branding/README.md) was created on 2026-10-29 from the existing visual style. Creator acceptance and UI integration remain pending.
-
-The first documented repository import on **2026-10-26** added 33 source, asset, and legacy files in commit [4d50ce6](https://github.com/babunidev/Rocketgame42/commit/4d50ce6). This is the **repository-import date, not the original creation date**. The portable v1.42 readme describes a Windows x64 offline build; its EXE and RAR are deliberately excluded from Git tracking. They are not published by this repository.
-
-Some source references and code comments attest to earlier work, but a complete dated historical changelog was not found in the committed files. See the provenance notes in the [development journal](docs/DEVLOG.md).
-
-## Documentation audit #29 — 27 October 2026
-
-The repository includes a **Serve on Wi-Fi** feature in the Electron source, introduced after the imported v1.42 snapshot. A desktop-only control starts and stops an HTTP server on port 4173, displays available LAN IPv4 addresses, and allows other devices to load an independent browser game. This is **LAN access, not synchronized multiplayer**: scores and sessions are not shared. The shipped historical portable executable is not evidence that this newer source feature is included; a new build and real LAN verification remain outstanding.
-
-The GitHub documents distinguish the preserved Flash artifacts, modern reconstruction, October 2026 Wi-Fi extension, and portfolio possibilities. In particular, 2009 file metadata is not a verified original release date, and successful browser, Electron, Windows packaging, audio, LAN, and public-hosting tests are not claimed. See [architecture](docs/ARCHITECTURE.md), [decision history](docs/DECISIONS.md) and [development journal](docs/DEVLOG.md).
-
-The creator approved the logo direction and requested English branding. A [square Rocket Game 42 logo](assets/branding/rocket-game-42-logo-square-v1.png) is now available; UI integration remains pending.
+`source/game/` holds the game. `source/main.cjs` is the Electron desktop shell, and `source/server/` holds the web server. `RaketenspielOLD/` and `raketenspiel.html` preserve the Flash versions, and `assets/` holds the logo and QR code. The original Flash project file (`.fla`) is not in the repository. The portable v1.42 Windows build is described in `Raketenspiel 42 v1.42 Read Me.txt`, but its EXE and RAR are not tracked or published here.
 
 ## License
 
-Original reconstructed software is licensed under [MIT](LICENSE). Game artwork, sound, identity and legacy materials require separate treatment described in [asset rights](docs/ASSET_RIGHTS.md).
+The reconstructed game code is [MIT licensed](LICENSE). The game's identity, artwork, sound and the historical Flash material are not covered by MIT; see [asset rights](docs/ASSET_RIGHTS.md).

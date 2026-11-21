@@ -1,8 +1,16 @@
-# Raketenspiel 42 — proposed logo v1
+# Rocket Game 42 logos
+
+Two logos, both generated on 29 October 2026 by an AI image generator (tool and model not recorded) at my request, with their full prompts below. The visual direction has my approval. Neither is used inside the game yet; where it goes is still open.
+
+| File | What it is |
+| --- | --- |
+| [raketenspiel-42-logo-v1.png](raketenspiel-42-logo-v1.png) | First logo, German title, transparent, 1774 × 887 |
+| [rocket-game-42-logo-square-v1.png](rocket-game-42-logo-square-v1.png) | Square English version, transparent, 1254 × 1254 |
+| [rocket-game-42-logo-square-627.webp](rocket-game-42-logo-square-627.webp) | 627 × 627 WebP of the square version |
 
 ## Square English variant
 
-[rocket-game-42-logo-square-v1.png](rocket-game-42-logo-square-v1.png) is the square Rocket Game 42 adaptation requested after the creator approved the initial style. Generated with the built-in image tool using the original PNG as an edit reference. Visually checked text and composition; verified square dimensions and RGBA format. Not integrated into the UI.
+[rocket-game-42-logo-square-v1.png](rocket-game-42-logo-square-v1.png) is the square Rocket Game 42 version I asked for after approving the first logo’s style. It was generated with the original PNG as an edit reference. Visually checked text and composition; verified square dimensions and RGBA format. Not integrated into the UI.
 
 ### Square variant prompt
 
@@ -10,11 +18,11 @@ Use case: logo-brand. Edit the supplied logo into a square 1:1 logo image with a
 
 ## Original horizontal variant
 
-Created 2026-10-29 with the built-in image generation tool at the creator's request for a cool, flashy, stylish logo informed by the existing game designs.
+What I asked for was a cool, flashy, stylish logo informed by the game’s existing designs.
 
 Asset: [raketenspiel-42-logo-v1.png](raketenspiel-42-logo-v1.png).
 
-The creator approved this visual direction on 2026-10-29 and requested a square English version titled Rocket Game. It is not installed in the game UI. The existing title, blue/silver rocket, orange exhaust, dark navy interface and lime accents informed the design; the metallic wordmark and sweeping exhaust composition are AI suggestions, not established canon.
+After approving this direction on 2026-10-29, I asked for a square English version titled Rocket Game. The existing title, blue/silver rocket, orange exhaust, dark navy interface and lime accents informed the design; the metallic wordmark and sweeping exhaust composition are AI suggestions, not established canon.
 
 Reviewed against the rendered local start menu and design documentation. Visually checked the generated title spelling, number, composition and padding. This raster asset is intended for title/marketing use; small-icon suitability and in-game placement have not been tested. No gameplay behavior was changed or tested.
 

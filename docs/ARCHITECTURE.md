@@ -1,61 +1,69 @@
-# Technical Architecture — Audited 2026-10-26
+# Architecture
 
-**Status:** Source-based review only; no local runtime or test suite executed.
+How the game, the desktop app and the web server fit together. The code is described as of 21 November 2026; the last section keeps earlier findings and what became of them.
 
-## Stack
+## Overview
 
-Vanilla browser HTML, JavaScript, CSS, and SVG; Node/npm used for Electron-based Windows packaging. `package.json` declares Electron **44.7.0** and electron-builder **^26.0.12**. The Windows portable target is x64.
+The game is plain browser HTML, JavaScript, CSS and SVG with no build step. It runs in three settings:
 
-## Modules
+| Setting | Served by | High scores |
+| --- | --- | --- |
+| **Web**, [babuni.dev/Rocketgame42](https://babuni.dev/Rocketgame42/) | `source/server/rocketgame_server.py` behind nginx | Global top 100 in SQLite on the server |
+| **Desktop**, Electron (`source/main.cjs`) | the custom `raketenspiel://` protocol | Local, in the app's data folder |
+| **LAN**, Serve on Wi-Fi from the desktop app | a small HTTP server in `main.cjs`, port 4173 | Local, in each guest's browser |
+
+The development command `npm run dev:web` serves `source/game/` with Python's static server and also uses local scores.
+
+## Game modules
 
 | File | Responsibility |
 | --- | --- |
-| `source/game/assets.js` | Embedded recovered vector artwork / asset definitions |
-| `source/game/gameplay.js` | Translated Flash-style mechanics, score, enemies, pickups, player |
-| `source/game/runtime.js` | DOM/SVG scene graph, compatibility model, simulation clock |
-| `source/game/missiles.js` | Seeker missile inventory, targeting, trajectories and hits |
-| `source/game/highscores.js` + CSS | Menu, score entry, leaderboard, local persistence |
-| `source/game/sfx.js` | Local OGG sound playback |
-| `source/game/index.html` | HTML shell, SVG stage, instructions and menu |
-| `source/main.cjs` | Electron window, custom protocol, offline restrictions and portable data path |
-| `source/source-manifest.json` | SHA-256 integrity references for selected v1.42 game files |
+| `source/game/index.html` | Page shell, SVG stage, start/score screen, touch-control markup |
+| `source/game/assets.js` | Recovered vector artwork (`window.RAKETENSPIEL_ASSETS`) |
+| `source/game/runtime.js` | SVG scene graph imitating Flash clips, 48 Hz logic and drawing, mouse and touch input on the playfield, the `window.Raketenspiel` interface |
+| `source/game/gameplay.js` | The translated Flash gameplay: ship, laser, asteroids, enemies, score, level |
+| `source/game/missiles.js` | Seeker-missile stock, targeting, flight paths and hits |
+| `source/game/highscores.js` + `.css` | Welcome and game-over screens, name entry, global or local board |
+| `source/game/touch.js` + `.css` | On-screen steering pad, LASER and ROCKETS buttons |
+| `source/game/sfx.js` | Sound playback; MP3 where Ogg can't play |
+| `source/game/wifi.js` | Serve on Wi-Fi panel, only when the Electron bridge exists |
 
-The browser runtime describes itself as a reconstruction that does not embed a SWF interpreter. It uses a 48 Hz logic step and preserves specific legacy ActionScript behavior. The Electron shell uses a restricted `raketenspiel://` protocol, blocked external HTTP(S) requests, context isolation, sandboxing, and disabled Node integration.
+The game says it is a reconstruction and contains no SWF interpreter. Logic steps at 48 Hz, scaled from the original 16 FPS. `runtime.js` exposes `window.Raketenspiel` with `reset`, `play`, `pause`, `press`/`release` (laser), `steer(x)` and `fireMissiles()`. `highscores.js` and `touch.js` drive the game through it. On the playfield, touch pointers only steer, while mouse pointers steer and fire as before.
 
-## Local commands (documented, not executed here)
+## High scores
+
+`highscores.js` asks `api/scores` when the page comes over `http(s)`. If the server answers, the welcome and game-over screens show the global list and new scores are posted there. If not, which is the case in Electron, Serve on Wi-Fi and static servers, the game uses the local list in `localStorage` (`raketenspiel.highscores.v1`). The last name entered is remembered per browser. Both lists sort by points, then level, then the earlier run.
+
+## Web server
+
+`source/server/rocketgame_server.py` (Python standard library) serves the built game folder and `GET`/`POST api/scores` under `/Rocketgame42/` on `127.0.0.1:8788`, behind the babuni.dev nginx site. It keeps the best 100 runs in `/var/lib/rocketgame42/scores.sqlite3`, cleans names, bounds points and levels, and limits each address to 20 submissions a minute. Releases live in `/var/www/rocketgame42/releases/` with a `current` link. `build-web.sh` assembles a release, adding MP3 copies of the sounds, and `publish.sh` tests, uploads, switches and verifies it. Deployment, limits and administration: [source/server/README.md](../source/server/README.md). Tests: `source/tests/test_public_server.py`.
+
+## Desktop app
+
+`source/main.cjs` opens a fixed-size window on a restricted `raketenspiel://` protocol that serves only listed game files. It blocks external requests and uses context isolation, a sandbox and no Node integration. A fixed origin keeps portable score data when the app unpacks to a new folder. `source/package.json` uses Electron 44.7.0 and electron-builder ^26.0.12 for a Windows x64 portable build.
+
+**Serve on Wi-Fi:** on request from the start menu, `main.cjs` starts an HTTP server on port 4173 on all IPv4 interfaces. It answers GET and HEAD for the listed game files only and stops when switched off or when the app closes. `preload.cjs` gives the window only `status`, `start` and `stop`. `wifi.js` shows the controls only when that bridge exists, so guests in a browser never see them. Each guest plays alone with their own scores.
+
+## Commands
 
 ```sh
 cd source
 npm install
-npm run dev:web    # Python static server on port 4173
+npm run dev:web    # static server on http://127.0.0.1:4173/
 npm start          # Electron
-npm run dist       # Windows portable packaging
+npm run dist       # Windows portable build
+python3 -m unittest discover -s tests -p 'test_*.py'   # server tests
 ```
-
-## Known gaps and audit findings
-
-- `source/package.json` references `build/icon.png`, but that file was absent from the 33-file initial commit listing. Packaging/icon behavior needs checking.
-- The Electron protocol allowlist includes HTML/JS/CSS but not `sounds/*.ogg`, despite `sfx.js` loading `sounds/...`. **Potential packaged-audio failure**; verify before claiming functional sound in the portable build.
-- The `source/README.md` mentions `recovered-source/*.as`, but no such directory appears in the committed inventory. This is missing historical source/evidence, not proof it never existed.
-- There is no committed automated test suite identified in the initial file list. Test hooks appear in the runtime and high-score code; that alone is not a recorded passing regression test.
-- `source/source-manifest.json` lists a subset of game files, not every committed JS file; do not treat it as a complete inventory.
-- Ordinary Git excludes `node_modules`, `.tools`, generated Electron data, and packaged executables.
 
 ## Verification
 
-2026-10-26: Inspected named files via GitHub connector and checked repository import listing supplied by Babuni.dev. Browser execution, game simulation, builds, and cross-platform behavior **not verified**.
+- **2026-11-21:** 11 server tests passed. Headless Chromium passed 18 checks against the built web release with mock scores (desktop, phone in both orientations, tablet, and a static-server fallback). Against the live site, the pages, redirects, score API, MP3 sound, compression and headers were checked, the server files were confirmed unreachable, and the game loaded at desktop and phone size.
+- **Not verified:** a real phone, the Electron app with the current source, a Windows build, Serve on Wi-Fi with a second device.
 
+## Earlier findings (audit of 2026-10-26)
 
-## Local Wi-Fi serving (2026-10-26 source addition)
-
-`main.cjs` now includes a Node HTTP server that binds to all IPv4 network interfaces on port 4173 only when requested from the desktop menu. It allows only enumerated game assets and supports GET/HEAD; it stops when disabled or the app exits. `preload.cjs` exposes three IPC actions to the trusted Electron main frame. `game/wifi.js` and menu controls show hosting status and LAN URLs only when the preload API exists. Browser visitors have no host controls or Node access.
-
-**Limits:** This is not multiplayer; each player retains a separate local leaderboard. Firewall rules and network isolation may prevent access. Port conflicts are shown as errors. Binding to all interfaces should be used only on trusted LANs. Runtime tests and rebuild are pending. The previously noted OGG routing gap was addressed in source, not yet verified in a packaged build.
-
-## Audit clarification — 2026-10-27
-
-The earlier imported-source finding that the custom Electron protocol did not allow OGG files is **historical**: the 2026-10-26 Wi-Fi source change expanded the relevant allowlist. Its successful operation in a packaged build has not been independently demonstrated. The LAN HTTP host is separate from the `raketenspiel://` local Electron protocol: the former serves a fixed allowlist over `http://<LAN IPv4>:4173/` on explicit request, while the latter loads the desktop window itself. `preload.cjs` exposes only `status`, `start`, and `stop`; `game/wifi.js` does not reveal host controls unless that Electron bridge is present. These source-level boundaries do not replace real firewall, second-device, audio and release-build tests.
-
-## Web release and global high scores (2026-11-21)
-
-`source/server/rocketgame_server.py` serves the built game folder and `api/scores` (top 100 in SQLite) under `/Rocketgame42/`, on `127.0.0.1:8788` behind the babuni.dev nginx site. `highscores.js` asks `api/scores` when the page comes from `http(s)`; if the server answers, the welcome and game-over screens show the global list and new scores are posted there, otherwise the local `localStorage` list is used as before. `touch.js` drives the game through `Raketenspiel.steer()`, `press()`/`release()` and `fireMissiles()` exposed by `runtime.js`; touch pointers on the playfield only steer. Deployment, limits and administration: [source/server/README.md](../source/server/README.md).
+- **Ogg sounds missing from the Electron allowlist:** fixed in source by the Wi-Fi change of 2026-10-26; not yet tested in a packaged build.
+- **Icon missing:** `source/package.json` refers to `build/icon.png`. The file exists locally, but the root `.gitignore` rule `build/` keeps it out of Git, so a clean checkout lacks it.
+- **`recovered-source/*.as`:** mentioned in `source/README.md` and comments but not in the repository. That is missing evidence, not proof that the files never existed.
+- **`source/source-manifest.json`:** hashes for six v1.42 files. On 2026-11-21 none of them matched, not even in the 2026-10-26 import, so the imported source had already changed since v1.42. The manifest describes v1.42, not the current files.
+- **Tests:** none at import; server tests were added on 2026-11-21.

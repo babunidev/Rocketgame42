@@ -1,26 +1,31 @@
-# Project Content and Historical Assets
+# Content
 
-## Current files
+What material the repository holds, where it came from, and what may be published. Rights are explained in [asset rights](ASSET_RIGHTS.md).
 
-- `assets/branding/raketenspiel-42-logo-v1.png`: AI-generated transparent logo proposal, 1774 × 887 RGBA; not yet accepted or integrated. Its adjacent README records provenance and the full prompt.
+## Game material
 
-- `source/game/assets.js`: embedded vector game artwork, not individually exported image files.
-- `source/game/sounds/`: rocket and seeker explosion OGG sounds; duplicate/reference OGGs also at repository root.
-- `source/game/index.html`, `highscores.css`: gameplay shell, instructional menu, results/leaderboard UI.
-- `RaketenspielOLD/`: multiple SWF variants and their HTML loaders (`raketenspiel.swf`, `raketenspiel3.swf`, `raketenspiel4.swf`, `raketenspiel41.swf`, `raketenspiel42.swf`), and a legacy ZIP archive.
-- `raketenspiel.html`: Flash-era embedding page, fixed at 550 × 400.
-- `Raketenspiel 42 v1.42 Read Me.txt`: contemporary user instructions and packaging details for a portable Windows x64 release.
+- `source/game/assets.js`: all game artwork as embedded vector data, recovered from the earlier version. There are no separate image files.
+- `source/game/sounds/`: the rocket and seeker explosion sounds (Ogg). The web release adds MP3 copies at build time. Copies of the Ogg files also sit in the repository root (`RoketExplosion.ogg`, `seekerExplosion.ogg`).
+- `source/game/index.html`, `highscores.css`, `touch.css`: the page shell, the start and score screens and the touch controls.
 
-## Provenance gaps
+## Logo and QR code
 
-Original `.fla` files, dated development notes, release notes for intermediate SWFs, separate screenshots/captures, artwork production sources, and a verifiable license/asset-rights inventory have not been found in the initial imported file list.
+- `assets/branding/raketenspiel-42-logo-v1.png`: the first logo, transparent, 1774 × 887. AI-generated; approved direction.
+- `assets/branding/rocket-game-42-logo-square-v1.png`: the square English logo, transparent, 1254 × 1254, made from the first one.
+- `assets/branding/rocket-game-42-logo-square-627.webp`: a 627 × 627 WebP of the square logo.
+- [assets/branding/README.md](../assets/branding/README.md) records the full prompts and checks. Neither logo is used inside the game yet.
+- `assets/qr/`: a QR code (SVG, PNG) that opens the game's play module on babuni.dev. See [its README](../assets/qr/README.md).
 
-## Portfolio material already available
+## Historical material
 
-A tangible sequence of preserved Flash binaries, a distinct modern SVG implementation, a self-contained visual asset representation, playable interaction design visible in code, and a documented portable-build workflow.
+- `RaketenspielOLD/`: the Flash versions `raketenspiel.swf`, `raketenspiel3.swf`, `raketenspiel4.swf`, `raketenspiel41.swf` and `raketenspiel42.swf` with their HTML launchers (one more launcher, `raketenspiel2.html`, has no SWF), a Flash helper script and an older ZIP archive.
+- `raketenspiel.html`: a Flash launcher with a 550 × 400 game area.
+- `Raketenspiel 42 v1.42 Read Me.txt`: the instructions for the portable Windows x64 release v1.42. The EXE and RAR themselves are kept out of Git.
 
-## Publication caution
+## Gaps
 
-Do not distribute legacy binaries or assets beyond authorized rights; determine rights and provenance before public download links. Archive files must not be represented as a complete version history without corroborating evidence.
+Not found in the repository: the original `.fla` files, dated development notes, release notes for the Flash versions, screenshots or recordings, the art production files, the `recovered-source/*.as` files mentioned in comments, and a full rights inventory.
 
-- `assets/branding/rocket-game-42-logo-square-v1.png`: transparent square English logo variant, generated from the first logo with the built-in image tool. Full prompt in `assets/branding/README.md`.
+## Publishing
+
+The game is published at [babuni.dev/Rocketgame42](https://babuni.dev/Rocketgame42/), built from `source/game/` only. Don't distribute the historical binaries or media until their rights and origin are clear. Don't present the archive as a complete version history without dated evidence.
