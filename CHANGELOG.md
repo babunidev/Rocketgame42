@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-21 — website play module and QR code
+
+- Added `assets/qr/`: a QR code (SVG and PNG) for `https://www.babuni.dev/#project=rocket-game-42&read=play-live`, the babuni.dev module with the Play button. The module itself lives in the babuni.dev repository. Claude Code (Claude Opus 5.5).
+
 ## 2026-11-21 — web release with global high scores and touch controls
 
 - Added `source/server/`: a Python standard-library game server with a SQLite top-100 high-score list (`GET/POST api/scores`), a systemd unit, an nginx snippet for `https://babuni.dev/Rocketgame42/`, a one-time server setup script and build/publish scripts following the Button Game deployment. Claude Code (Claude Opus 5.5).

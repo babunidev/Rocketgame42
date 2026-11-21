@@ -29,7 +29,7 @@ Status terms: verified in repository / source-identified but runtime-unverified 
 - [x] Prepare a playable web release with a global high-score list and touch controls (source ready 2026-11-21; see `source/server/README.md`)
 - [x] Deploy to `https://babuni.dev/Rocketgame42/` (2026-11-21, release `c7c3c22`)
 - [ ] Test on a real phone, iPhone sound included, and a score shared between two devices
-- [ ] Decide whether the babuni.dev website links to the game
+- [x] Website play module with a shareable QR code (2026-11-21)
 - [ ] Confirm asset credits, licensing and release permissions
 
 ## Status
