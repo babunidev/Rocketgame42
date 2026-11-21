@@ -6,7 +6,7 @@ The repository starts with an import on 26 October 2026. Older history comes onl
 
 ## 2026-11-21 — documentation review
 
-- Revised all project documentation against `docs/DOCUMENTATION.md`. Babuni is named as the creative (babuni.dev is the website), the journal and decisions are in first person, outdated status claims are corrected, and this changelog is in date order. `docs/AI_COLLABORATION.md`, `docs/DOCUMENTATION.md` and `AGENTS.md` are unchanged. Claude Code (Claude Opus 5.5).
+- Revised all project documentation against `docs/DOCUMENTATION.md`. Babuni is named as the creative (babuni.dev is the website), the journal and decisions are in first person, outdated status claims are corrected, and this changelog is in date order. `AGENTS.md` now names Babuni, not the website, in its attribution rule; the shared `docs/AI_COLLABORATION.md` and `docs/DOCUMENTATION.md` are unchanged. Claude Code (Claude Opus 5.5).
 - Recorded that `source/source-manifest.json` matches none of its six files, not even in the 2026-10-26 import.
 
 ## 2026-11-21 — website play module and QR code

@@ -30,7 +30,7 @@ Maintain Babuni's reasoning, meaningful alternatives, disagreements, rejected id
 
 ## Author attribution
 
-Credit **Babuni** as the original human creative. Do not use “creator” as a title for Babuni.dev; identify separately any AI work, later reconstructions and third-party components.
+Credit **Babuni** as the original human creative. Do not use “creator” as a title for Babuni; identify separately any AI work, later reconstructions and third-party components.
 
 ## Repository-local documentation standard
 
