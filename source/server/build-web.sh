@@ -17,7 +17,6 @@ for f in index.html highscores.css touch.css sfx.js assets.js gameplay.js missil
   cp "$GAME/$f" "$OUT/www/"
 done
 cp "$GAME/sounds/"*.ogg "$OUT/www/sounds/"
-cp "$SRC/build/icon.png" "$OUT/www/icon.png"
 
 if command -v ffmpeg >/dev/null; then
   for source in "$OUT/www/sounds/"*.ogg; do
