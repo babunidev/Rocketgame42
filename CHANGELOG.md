@@ -6,7 +6,9 @@
 - `highscores.js` shows the global list on the welcome and game-over screens when the score server is reachable, and keeps the local browser list otherwise (Electron, Serve on Wi-Fi, static server). Claude Code (Claude Opus 5.5).
 - Added on-screen touch controls (`touch.js`, `touch.css`): steering pad, hold-to-fire LASER, tap ROCKETS; touching the playfield steers without firing. Mouse controls unchanged. Claude Code (Claude Opus 5.5).
 - `sfx.js` falls back to MP3 copies (built by `build-web.sh`) where Ogg cannot play. `main.cjs` allowlists the two new files. Claude Code (Claude Opus 5.5).
-- Added server tests in `source/tests/test_public_server.py`. Not yet deployed to the server.
+- Added server tests in `source/tests/test_public_server.py`.
+- `build-web.sh` no longer copies the untracked `source/build/icon.png`, which broke the first publish from a clean checkout.
+- Deployed release `c7c3c22` to `https://babuni.dev/Rocketgame42/` (service `rocketgame42` on 127.0.0.1:8788, nginx snippet in the babuni.dev site).
 
 ## 2026-11-19 — human–AI collaboration record
 

@@ -27,7 +27,8 @@ Status terms: verified in repository / source-identified but runtime-unverified 
 - [ ] Create a dated visual timeline, explicitly distinguishing evidence from recollection
 - [ ] Write a Babuni.dev-led narrative of design motives, reconstruction challenges, and changes of direction
 - [x] Prepare a playable web release with a global high-score list and touch controls (source ready 2026-11-21; see `source/server/README.md`)
-- [ ] Deploy to `https://babuni.dev/Rocketgame42/` and test on a real phone, iPhone sound included
+- [x] Deploy to `https://babuni.dev/Rocketgame42/` (2026-11-21, release `c7c3c22`)
+- [ ] Test on a real phone, iPhone sound included, and a score shared between two devices
 - [ ] Decide whether the babuni.dev website links to the game
 - [ ] Confirm asset credits, licensing and release permissions
 

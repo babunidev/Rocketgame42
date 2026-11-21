@@ -23,7 +23,7 @@ The player defends a mothership, steering with the mouse, firing a laser, and la
 
 ## Web release
 
-The game can run on babuni.dev at `https://babuni.dev/Rocketgame42/` with one global high-score list and on-screen touch controls for phones and tablets. The server and deployment steps are in [source/server/README.md](source/server/README.md). **Status (2026-11-21):** implemented and tested locally; not yet deployed.
+The game can run on babuni.dev at `https://babuni.dev/Rocketgame42/` with one global high-score list and on-screen touch controls for phones and tablets. The server and deployment steps are in [source/server/README.md](source/server/README.md). **Status (2026-11-21):** live at https://babuni.dev/Rocketgame42/ (release `c7c3c22`); not yet tested on a real phone.
 
 ## Development source
 
