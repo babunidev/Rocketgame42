@@ -11,7 +11,9 @@ Recovered from **Raketenspiel 42 v1.42 Portable.exe** (Electron 44.7.0). Editabl
 | `game/gameplay.js` | Rules, scoring, lasers, special asteroids |
 | `game/runtime.js` | SVG scene graph / timing (16 Hz logic, 30 FPS draw) |
 | `game/assets.js` | Vector art (`window.RAKETENSPIEL_ASSETS`) |
-| `game/highscores.js` / `.css` | Local high-score UI |
+| `game/highscores.js` / `.css` | High-score UI: global list from the server, or local |
+| `game/touch.js` / `.css` | On-screen touch controls (steer, laser, rockets) |
+| `server/` | Web server, global score database and deployment for babuni.dev/Rocketgame42 |
 | `game/index.html` | Shell page |
 | `main.cjs` | Electron window + portable data folder |
 | `build/icon.png` | Window / build icon |
@@ -37,7 +39,7 @@ Electron window (same game, portable-style shell):
 npm start
 ```
 
-High scores use `localStorage` in the browser, or a **Raketenspiel 42 Data** folder next to the EXE / Electron binary when running as an app.
+High scores use the server list when served by `server/rocketgame_server.py` (see [server/README.md](server/README.md)); otherwise `localStorage` in the browser, or a **Raketenspiel 42 Data** folder next to the EXE / Electron binary when running as an app.
 
 ## Rebuild the Windows portable EXE
 

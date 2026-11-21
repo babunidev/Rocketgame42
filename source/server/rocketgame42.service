@@ -1,0 +1,26 @@
+# systemd unit for the Rocket Game 42 public server (installed by install-on-server.sh).
+# Code and game files: /var/www/rocketgame42/current (release symlink, uploaded by babunideploy).
+# High scores: /var/lib/rocketgame42/scores.sqlite3 (owned by the rocketgame42 service user).
+[Unit]
+Description=Rocket Game 42 public server (babuni.dev/Rocketgame42)
+After=network.target
+
+[Service]
+Type=simple
+User=rocketgame42
+Group=rocketgame42
+WorkingDirectory=/var/lib/rocketgame42
+ExecStart=/usr/bin/python3 /var/www/rocketgame42/current/rocketgame_server.py --db /var/lib/rocketgame42/scores.sqlite3 serve --bind 127.0.0.1 --port 8788 --web-root /var/www/rocketgame42/current/www --base-path /Rocketgame42 --trust-proxy
+Restart=on-failure
+RestartSec=3
+StateDirectory=rocketgame42
+StateDirectoryMode=0750
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ReadWritePaths=/var/lib/rocketgame42
+
+[Install]
+WantedBy=multi-user.target

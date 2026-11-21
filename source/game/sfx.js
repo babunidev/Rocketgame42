@@ -3,11 +3,15 @@
   'use strict';
   const unlocked = { ok: false };
   const cache = new Map();
+  // iPhone/Safari may not play Ogg: the web release also ships MP3 copies.
+  const useMp3 = (() => {
+    try { return !new Audio().canPlayType('audio/ogg; codecs="vorbis"'); } catch { return false; }
+  })();
 
   function load(name) {
     let audio = cache.get(name);
     if (!audio) {
-      audio = new Audio(`sounds/${name}`);
+      audio = new Audio(`sounds/${useMp3 ? name.replace(/\.ogg$/, '.mp3') : name}`);
       audio.preload = 'auto';
       cache.set(name, audio);
     }

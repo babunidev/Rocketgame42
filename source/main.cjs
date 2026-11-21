@@ -23,7 +23,7 @@ let lanServer = null;
 const lanPort = 4173;
 const gameDir = path.join(__dirname, 'game');
 const mime = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.ogg':'audio/ogg'};
-const publicFiles = new Set(['index.html','assets.js','gameplay.js','runtime.js','missiles.js','sfx.js','highscores.js','highscores.css','wifi.js','sounds/roket-explosion.ogg','sounds/seeker-explosion.ogg']);
+const publicFiles = new Set(['index.html','assets.js','gameplay.js','runtime.js','missiles.js','sfx.js','highscores.js','highscores.css','touch.js','touch.css','wifi.js','sounds/roket-explosion.ogg','sounds/seeker-explosion.ogg']);
 function localUrls() {
   return Object.values(os.networkInterfaces()).flat().filter(i => i && i.family === 'IPv4' && !i.internal)
     .map(i => 'http://' + i.address + ':' + lanPort + '/').filter((s,i,a) => a.indexOf(s) === i);

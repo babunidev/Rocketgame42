@@ -21,6 +21,10 @@ The player defends a mothership, steering with the mouse, firing a laser, and la
 - [docs/AI_COLLABORATION.md](docs/AI_COLLABORATION.md) — attribution method
 - [source/README.md](source/README.md) — developer run/build instructions
 
+## Web release
+
+The game can run on babuni.dev at `https://babuni.dev/Rocketgame42/` with one global high-score list and on-screen touch controls for phones and tablets. The server and deployment steps are in [source/server/README.md](source/server/README.md). **Status (2026-11-21):** implemented and tested locally; not yet deployed.
+
 ## Development source
 
 `source/game/` holds game logic, the SVG scene runtime, embedded vector assets, missiles, sound, and high scores. `source/main.cjs` provides the Electron shell. `RaketenspielOLD/` holds legacy Flash/HTML material. The original editable Flash authoring file is not present in the committed inventory; the developer README identifies the modern version as a reconstruction, not the original .fla.

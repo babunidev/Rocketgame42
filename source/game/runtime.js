@@ -227,15 +227,17 @@
     if(e.button!==0)return;
     stage.setPointerCapture(e.pointerId);
     restartPressed=root.neu_mc._visible&&root.neu_mc.element.contains(e.target);
-    broadcast('onMouseDown');e.preventDefault();
+    // Touch on the playfield only steers; the on-screen LASER button fires (touch.js).
+    if(e.pointerType!=='touch')broadcast('onMouseDown');
+    e.preventDefault();
   });
   stage.addEventListener('pointerup',e=>{
     pointer(e);
-    if(e.button===0)broadcast('onMouseUp');
+    if(e.button===0&&e.pointerType!=='touch')broadcast('onMouseUp');
     if(restartPressed&&root.neu_mc._visible){const r=root.neu_mc.element.getBoundingClientRect();if(e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom)root.neu_mc.onRelease?.call(root.neu_mc);}
     restartPressed=false;render();
   });
-  stage.addEventListener('pointercancel',()=>{broadcast('onMouseUp');restartPressed=false;});
+  stage.addEventListener('pointercancel',e=>{if(e.pointerType!=='touch')broadcast('onMouseUp');restartPressed=false;});
   window.addEventListener('blur',()=>{broadcast('onMouseUp');lastTime=null;accumulator=0;});
   document.addEventListener('visibilitychange',()=>{lastTime=null;accumulator=0;if(document.hidden)broadcast('onMouseUp');});
   function loop(now){
@@ -260,5 +262,7 @@
   capturePrev();
   present(1);
   paused=isTest;requestAnimationFrame(loop);
-  window.Raketenspiel={root,step,render,reset,get frames(){return frames;},pause(){paused=true;},play(){paused=false;lastTime=null;accumulator=0;visualAccum=0;},setRandom(fn){random=fn;},press(){broadcast('onMouseDown');},release(){broadcast('onMouseUp');},get objects(){return objects;}};
+  window.Raketenspiel={root,step,render,reset,get frames(){return frames;},pause(){paused=true;},play(){paused=false;lastTime=null;accumulator=0;visualAccum=0;},setRandom(fn){random=fn;},press(){broadcast('onMouseDown');},release(){broadcast('onMouseUp');},
+    // Touch controls: steer to a playfield x (0–550) and launch the seeker missiles.
+    steer(x){root._xmouse=quantizePosition(Math.max(0,Math.min(550,Number(x)||0)));},fireMissiles:fireMissilesNow,get objects(){return objects;}};
 })();

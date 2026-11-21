@@ -1,0 +1,65 @@
+/* Touch controls (touch.js). Shown only when <html> has the .touch class.
+ * Landscape: steering pad in the left gutter, LASER + ROCKETS in the right gutter.
+ * Portrait: the game on top, a control bar underneath. */
+#touch-controls { display:none; }
+.touch-only { display:none; }
+html.touch .touch-only { display:block; }
+html.touch .mouse-only { display:none; }
+
+html.touch, html.touch body { overscroll-behavior:none; }
+html.touch body { -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; }
+html.touch #touch-controls { display:block; position:fixed; inset:0; pointer-events:none; z-index:5; font-family:Arial,sans-serif; }
+#touch-controls > * { pointer-events:auto; touch-action:none; -webkit-tap-highlight-color:transparent; }
+/* iOS zooms into inputs below 16px; keep the name field at 16px on touch devices. */
+html.touch #player-name { font-size:16px; }
+
+#steer-pad { box-sizing:border-box; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  border:1px solid #29465a; background:linear-gradient(#0a1622cc,#06101acc); color:#7696b3; }
+#steer-pad .track { display:flex; align-items:center; justify-content:space-between; width:84%; max-width:170px; height:46px;
+  padding:0 12px; box-sizing:border-box; border:1px solid #48697f; border-radius:23px; background:#0c1d2b; color:#cde6f4; font-size:18px; }
+#steer-pad .track i { display:block; width:18px; height:18px; border-radius:50%; background:#d6f790; box-shadow:0 0 10px #d6f79088; }
+#steer-pad .label { font-size:10px; letter-spacing:2px; }
+#steer-pad.active .track { border-color:#c3ea79; background:#16301f; }
+
+.touch-btn { box-sizing:border-box; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
+  margin:0; padding:0; border:1px solid #48697f; border-radius:0; font:bold 13px Arial,sans-serif; letter-spacing:1.5px; cursor:pointer; }
+.touch-btn small { font-size:9px; font-weight:normal; letter-spacing:.5px; opacity:.75; }
+#btn-laser { color:#eaffab; border-color:#729441; background:linear-gradient(#263d25,#192b20); }
+#btn-laser.active { background:#4a7a2a; border-color:#eaffab; box-shadow:inset 0 0 22px #d6f79066; }
+#btn-rockets { color:#cde6f4; background:linear-gradient(#183246,#102435); }
+#btn-rockets.active { background:#2c5f86; border-color:#92d7ff; }
+#rotate-hint { display:none; }
+
+/* Landscape phones and tablets: controls in the side gutters. */
+@media (orientation:landscape) {
+  html.touch { --side:clamp(104px,17vw,190px); }
+  html.touch #game-shell {
+    width:min(calc(100vw - 2 * var(--side)), calc(100dvh * 11 / 8));
+    height:min(calc((100vw - 2 * var(--side)) * 8 / 11), 100dvh);
+  }
+  #steer-pad { position:fixed; left:0; top:0; bottom:0; width:var(--side); border-width:0 1px 0 0; }
+  .touch-btn { position:fixed; right:0; width:var(--side); }
+  #btn-laser { top:0; height:62%; }
+  #btn-rockets { bottom:0; height:38%; border-top-width:0; }
+}
+
+/* Portrait: game on top, control bar below. */
+@media (orientation:portrait) {
+  html.touch { --bar:clamp(150px,32dvh,240px); }
+  html.touch body { box-sizing:border-box; padding-bottom:var(--bar); align-items:center; }
+  html.touch #game-shell {
+    width:min(100vw, calc((100dvh - var(--bar)) * 11 / 8));
+    height:min(calc(100vw * 8 / 11), calc(100dvh - var(--bar)));
+  }
+  #steer-pad { position:fixed; left:0; bottom:0; width:56%; height:var(--bar); border-width:1px 1px 0 0; }
+  .touch-btn { position:fixed; right:0; width:44%; }
+  #btn-laser { bottom:calc(var(--bar) * .4); height:calc(var(--bar) * .6); border-width:1px 0 0 0; }
+  #btn-rockets { bottom:0; height:calc(var(--bar) * .4); border-width:1px 0 0 0; }
+  @media (max-width:700px) {
+    html.touch #rotate-hint { display:block; position:fixed; left:0; right:0; bottom:calc(var(--bar) + 6px);
+      margin:0; text-align:center; font-size:11px; color:#7696b3; pointer-events:none; }
+  }
+}
+
+/* While the welcome / high-score screen is open the controls rest. */
+html.touch body:has(#game-shell.showing-scores) #touch-controls > * { opacity:.3; pointer-events:none; }

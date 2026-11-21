@@ -7,3 +7,4 @@ Raketenspiel 42 Data/
 .env
 .env.*
 .tools/
+__pycache__/

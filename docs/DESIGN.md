@@ -18,7 +18,7 @@ The code provides score/life/power indicators, glow and explosion effects, sound
 
 ## Accessibility and responsive questions
 
-The HTML has labels, semantic table markup, status announcements, focus management, and a named SVG stage. However, playable keyboard/controller equivalents, mobile touch controls, contrast, reduced-motion support, and screen-reader usability were not confirmed. The existing desktop-oriented mouse scheme should not be advertised as accessible across all input methods.
+The HTML has labels, semantic table markup, status announcements, focus management, and a named SVG stage. Touch devices get on-screen controls (2026-11-21): a steering pad, a hold-to-fire LASER button and a tap ROCKETS button in the side gutters in landscape, or in a bar under the game in portrait; touching the playfield steers without firing. These were tested in headless Chromium with simulated touches, not on a real phone. Playable keyboard/controller equivalents, contrast, reduced-motion support, and screen-reader usability were not confirmed. The existing desktop-oriented mouse scheme should not be advertised as accessible across all input methods.
 
 ## Portfolio presentation material to verify
 

@@ -55,3 +55,7 @@ npm run dist       # Windows portable packaging
 ## Audit clarification — 2026-10-27
 
 The earlier imported-source finding that the custom Electron protocol did not allow OGG files is **historical**: the 2026-10-26 Wi-Fi source change expanded the relevant allowlist. Its successful operation in a packaged build has not been independently demonstrated. The LAN HTTP host is separate from the `raketenspiel://` local Electron protocol: the former serves a fixed allowlist over `http://<LAN IPv4>:4173/` on explicit request, while the latter loads the desktop window itself. `preload.cjs` exposes only `status`, `start`, and `stop`; `game/wifi.js` does not reveal host controls unless that Electron bridge is present. These source-level boundaries do not replace real firewall, second-device, audio and release-build tests.
+
+## Web release and global high scores (2026-11-21)
+
+`source/server/rocketgame_server.py` serves the built game folder and `api/scores` (top 100 in SQLite) under `/Rocketgame42/`, on `127.0.0.1:8788` behind the babuni.dev nginx site. `highscores.js` asks `api/scores` when the page comes from `http(s)`; if the server answers, the welcome and game-over screens show the global list and new scores are posted there, otherwise the local `localStorage` list is used as before. `touch.js` drives the game through `Raketenspiel.steer()`, `press()`/`release()` and `fireMissiles()` exposed by `runtime.js`; touch pointers on the playfield only steer. Deployment, limits and administration: [source/server/README.md](../source/server/README.md).

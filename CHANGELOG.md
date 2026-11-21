@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-21 — web release with global high scores and touch controls
+
+- Added `source/server/`: a Python standard-library game server with a SQLite top-100 high-score list (`GET/POST api/scores`), a systemd unit, an nginx snippet for `https://babuni.dev/Rocketgame42/`, a one-time server setup script and build/publish scripts following the Button Game deployment. Claude Code (Claude Opus 5.5).
+- `highscores.js` shows the global list on the welcome and game-over screens when the score server is reachable, and keeps the local browser list otherwise (Electron, Serve on Wi-Fi, static server). Claude Code (Claude Opus 5.5).
+- Added on-screen touch controls (`touch.js`, `touch.css`): steering pad, hold-to-fire LASER, tap ROCKETS; touching the playfield steers without firing. Mouse controls unchanged. Claude Code (Claude Opus 5.5).
+- `sfx.js` falls back to MP3 copies (built by `build-web.sh`) where Ogg cannot play. `main.cjs` allowlists the two new files. Claude Code (Claude Opus 5.5).
+- Added server tests in `source/tests/test_public_server.py`. Not yet deployed to the server.
+
 ## 2026-11-19 — human–AI collaboration record
 
 - Added a rule to `AGENTS.md` and `docs/DOCUMENTATION.md`: `docs/AI_COLLABORATION.md` takes no dated entries; contributions are recorded in the journal and changelog. Claude Code (Claude Opus 5.5).

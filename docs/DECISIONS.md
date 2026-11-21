@@ -58,3 +58,10 @@ Meaning of “42”; original Flash creation chronology; which changes were Babu
 ## 2026-11-13 — Licensing decision
 
 To make the reuse terms explicit, I approved MIT for original game code, with sound, artwork and legacy materials separately documented. This applies only to material for which the relevant rights can be granted; third-party contributors keep their own credits and licenses. AI assistance committed the license notice and updated project-facing documentation. This was a legal/documentation change, not a runtime feature or test.
+
+## D-010 — Web release with a global high-score list and touch controls
+
+- **2026-11-21; creative direction:** Make the game playable on babuni.dev from the server with a database-backed high score shown on the welcome and game-over screens, and playable on every device with simple mobile controls for steering, laser and rockets.
+- **AI proposal, implemented (Claude Code, Claude Opus 5.5):** Reuse the Button Game server pattern (Python standard library + SQLite, systemd, nginx snippet, `babunideploy` releases) rather than adding a Node service or a PostgreSQL database for a single score table. Path `/Rocketgame42/`, port 8788, best 100 kept and top 10 shown, same order as the local list (points, level, earlier run). Offline builds keep the local list.
+- **AI proposal, implemented:** Touch layout — steering pad left, hold LASER and tap ROCKETS right in landscape; a control bar under the game in portrait with a hint to turn the phone. Touching the playfield steers but does not fire.
+- **Open for the creative:** the URL path name, the control layout after trying it on a real phone, and whether the website should link the game the way it links Button Game. Scores are trusted from the browser, as with Button Game.
