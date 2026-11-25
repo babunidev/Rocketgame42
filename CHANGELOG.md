@@ -4,6 +4,10 @@ What changed in this repository, newest first. The story behind each change is i
 
 The repository starts with an import on 26 October 2026. Older history comes only from the preserved files and is described in the journal, not here.
 
+## 2026-11-25 — Development screenshots in the journal
+
+- `docs/DEVLOG.md`: 2 entries now show 10 development screenshots taken at the time. The screenshots use mock high scores. The images are web-sized WebP copies served from the babuni.dev server's media folder (`https://www.babuni.dev/screenshots/rocket-game-42/…`), not stored in Git; on babuni.dev the journal shows them as small thumbnails that open large. No code changed. Claude Code (Claude Opus 5.5).
+
 ## 2026-11-21 — documentation review
 
 - Revised all project documentation against `docs/DOCUMENTATION.md`. Babuni is named as the creative (babuni.dev is the website), the journal and decisions are in first person, outdated status claims are corrected, and this changelog is in date order. `AGENTS.md` now names Babuni, not the website, in its attribution rule; the shared `docs/AI_COLLABORATION.md` and `docs/DOCUMENTATION.md` are unchanged. Claude Code (Claude Opus 5.5).
